@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learning and Development : Bot #1 - Flow #1 - Reporting the Basic Crime information to a simple echo bot</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Learning and Development</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="HateCrimeReporting---a-Microsoft-Bot-Framework-Tutorial_1009909761.html">HateCrimeReporting - a Microsoft Bot Framework Tutorial</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Learning and Development : Bot #1 - Flow #1 - Reporting the Basic Crime information to a simple echo bot
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Chris Spearing</span>, last modified on Feb 07, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Prerequisities:">Prerequisities:</h1><ul><li><p> Familiarity with git and Visual Studio Code.</p></li><li><p>You understand OO programming:</p><ul><li><p>Classes/Objects.</p></li><li><p>Methods.</p></li><li><p>Member Variables.</p></li><li><p>Flow Control.</p></li></ul></li><li><p>You have completed <a href="Environment-Settings_1009975297.html" data-linked-resource-id="1009975297" data-linked-resource-version="7" data-linked-resource-type="page">Environment Settings</a> .</p></li></ul><p> </p><h1 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Step1-ScaffoldaBot/Hello,World!"><strong>Step 1 - Scaffold a Bot / Hello, World!</strong></h1><p>Before we start, the Bot runs on a framework, and frameworks are usually complex. There are a lot of bits that make this work, but don't worry if they don't make sense to you, we will just lightly touch on them, then focus on the bits we care about, if you have any questions do ask.</p><p><span class="inline-comment-marker" data-ref="892ede0d-f060-4aed-a3bf-2f03e7da2561">In visual studio create your new folder and workspace and initialise a chatbot project:</span></p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>In the VS Code terminal type</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence" data-theme="Confluence">dotnet new -i Microsoft.Bot.Framework.CSharp.EmptyBot
+dotnet new emptybot</pre>
+</div></div><p>This scaffolds the basic chatbot framework, i.e. It creates all the boilerplate bits we don't want to. It does quite as lot.</p><p /><h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Bonusstuff">Bonus stuff</h2><p>We are concerned with EmptyBot.cs today.</p><p>If you are interested, here's a brief summary of what you're seeing now:</p><h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Program.cs">Program.cs </h2><p>This the entry point for the application. It contains a public static void main (the typical point to any application in C#, or Java). When you run the application, this is the first thing that will be called.</p><p>You will see that this uses the Startup.cs class to build the application. The chatbot is hosted as an Http Web Service when you start it up, hence the bit in Program.:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">WebHost.CreateDefaultBuilder(args)
+                .UseStartup&lt;Startup&gt;(); </pre>
+</div></div><p>The BotFramework is actually running on top of a framework called <a href="http://ASP.Net" class="external-link" rel="nofollow">ASP.Net</a> MVC, which is the .Net framework for web application development.</p><h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Startup.cs">Startup.cs</h2><p>The MVC framework uses a technique called dependency injection to 'wire up' classes at runtime, if you're not familiar with dependency injection or DI, do not worry too much at this point, but you can think of it as a special kind of factory - you tell it what classes you will need to build your program and when you ask for a class, it will try to build that classes and it's dependencies. These classes are known as services.</p><p> </p><p>What we are seeing here is the registration of 3 important services:</p><ol><li><p>MVC (this is the web framework I mentioned earlier).</p></li><li><p>The Bot Framework HTTP Adapter  - this makes sure that our web app can talk 'chatbot', in the same protocol that the bot emulator does.</p></li><li><p>EmptyBot - this is the most important service. This is our chatbot.</p></li></ol><p> </p><p>The contents of the Configure method are used to configure the further application settings. We won't worry about these for now.</p><h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-EmptyBot.cs">EmptyBot.cs</h2><p>This is where the chatty magic happens; this is where we're going to focus our time today. Currently what this code is doing, is saying 'Hello, World!' to any new members who join the bot's conversation</p><h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Controllers/BotController.cs">Controllers/BotController.cs</h2><p>This file is a Controller. Controllers are an important part of MVC (infact the C is for Controller); we won't worry about the other bits of MVC today. We only need to worry about the Bot class.</p><p>What this class does is define what happens you navigate to a particular resource - the bit on the end of your URL (or web address).</p><p>This particular resource is 'api/messages', that means when you run the bot, and access that resource, it will use the BotAdapter class (that was wired up in Startup.cs), to process the request, response, and your new chatbot (bot).</p><h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-endbonusstuff">end bonus stuff</h2><p>Start it up! </p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>In the terminal type and run</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">dotnet run</pre>
+</div></div><div class="confluence-information-macro confluence-information-macro-tip"><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>In short, what we have done, is made a chatbot that runs at: <a href="http://localhost:3978/api/messages" class="external-link" rel="nofollow">http://localhost:3978/api/messages</a></p></div></div><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>If you point your Bot Framework Emulator at that address, you will find your Bot says Hello, World!</p><p>That’s all it does for now. Let’s shutdown the app. In the terminal, use Ctrl + C (or Cmd + C) to stop the programme. </p></div></div><p>This is a good point to backup our work using git.</p><h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Setupthegitrepository">Setup the git repository</h2><p>Now we need to create a git repository (and tell it to ignore all the binary files).</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>In the terminal type and run:</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence" data-theme="Confluence">git init 
+touch .gitignore</pre>
+</div></div><p>This has created an empty file, it will tell git to ignore files (e.g. binaries and personal VS Code settings), if we tell it what we want it to ignore. </p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Navigate to: <a href="https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore" class="external-link" rel="nofollow">https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore</a> and copy the contents into the new .gitignore file (make sure you save it).</p></div></div><p>Now we need to put the files we do want into source control. </p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><span class="inline-comment-marker" data-ref="a2eb511b-548a-4e94-85fc-fedced60ce97">In the terminal type and run:</span></p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence" data-theme="Confluence">git add -A
+git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</pre>
+</div></div><p>Phew! that's the tricky bit done, if you've encountered any issues up to this point, don't worry, this happens. This is a phenomenon sometimes known as yak shaving.  (you can Google this, or see another example) <a href="https://xkcd.com/349/" class="external-link" rel="nofollow">https://xkcd.com/349/</a></p><h1 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Step2"><strong>Step 2</strong></h1><p>We now have a working chatbot, but it's not doing much yet. Let's make it do something a bit more interesting.</p><p>Our BA's have given us this specification:</p><span class="confluence-embedded-file-wrapper image-center-wrapper"><img class="confluence-embedded-image image-center" src="attachments/1009975304/1010073614.png" data-image-src="attachments/1009975304/1010073614.png" data-height="464" data-width="793" data-unresolved-comment-count="0" data-linked-resource-id="1010073614" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20200127-144328.png" data-base-url="https://principleonele.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="1009975304" data-linked-resource-container-version="11" data-media-id="62d3e992-519d-4be5-be88-b14145f0b369" data-media-type="file"></span><h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-2a.Changingthegreeting.">2a. Changing the greeting. </h2><p>Change the welcome message:</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>In EmptyBot.cs, change <em>&quot;Hello, World&quot;</em> to:</p><p><em>&quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what happened, and I will let the <span class="inline-comment-marker" data-ref="2c182147-88aa-43d9-96ca-d68cdd2b826c">club know</span> so they can take action.&quot;</em></p></div></div><p>You can run that, test it works, and commit (don't forget to add the change first).</p><p>Next, we need to capture some input from the user. We will need to ask them a question first - that question is &quot;What type of hate crime are you reporting?&quot;.</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p> So, store that message in a string constant at the top of the class:</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence" data-theme="Confluence">public const string WhatMessage = &quot;What type of hate crime are you reporting?&quot;;</pre>
+</div></div><p>Next, we need to send that message to the user, immediately after the greeting message.</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>We can simply copy and paste the greeting message, and change the in-line string be our new constant:</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">await turnContext.SendActivityAsync(MessageFactory.Text($&quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what happened, and I will let the club know so they can take action!&quot;), cancellationToken);
+await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellationToken: cancellationToken);               </pre>
+</div></div><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><span class="inline-comment-marker" data-ref="3459ca30-d539-4f23-bc7e-d5a0ba35e900">Run it, and test. If it works, commit again if you like.</span></p></div></div><p>You will see your message now comes through, but if you try responding, your Bot won't respond back.<br/>Now we know how to send greeting messages to the user. Next we need to interact with them.</p><h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-2b.Handletheuser’sresponse"><strong>2b. Handle the user’s response</strong></h2><p>What we need to do is handle their 'activities'.</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Add a new method to the EmptyBot class. </p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence" data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
+{
+} </pre>
+</div></div><p>This will handle anything the user sends back to us, we will want to capture their feedback and store it for use later on.</p><p>Our user is going to send some text at this point, we can get that from their latest activity:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
+{
+var text = turnContext.Activity.Text.ToLowerInvariant();
+} </pre>
+</div></div><p>To test this, we can then replay it back to them:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
+{
+  var text = turnContext.Activity.Text.ToLowerInvariant();
+  await turnContext.SendActivityAsync($&quot;You want to report {text}.&quot;, cancellationToken: cancellationToken);
+} </pre>
+</div></div><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Run the bot, test it, then stop the bot (Ctrl + C in Windows or CMD + C in MacOS) and commit your changes.</p></div></div><h1 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Step3"><strong>Step 3</strong></h1><p>At this point, the bot will echo the crime we want to report, but that's all it does.</p><p>We need to make a couple of enhancements:</p><ol><li><p>Store the crime so we can replay the whole report back to the user later on.</p></li><li><p>Make the bot understand where we are in the conversation flow, so we can ask different questions.</p></li></ol><p>To store the crime, we need to maintain the state of the conversation.</p><p>The bot framework gives us a mechanism to do that, the UserState class, this needs a storage mechanism to hold that state in, computer memory will do us for now. </p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Let’s register those classes in the Startup.cs ConfigureServices method.</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence" data-theme="Confluence">// Create the storage we&#39;ll be using for User and Conversation state. (Memory is great for testing purposes.)
+services.AddSingleton&lt;IStorage, MemoryStorage&gt;();
+// Create the User state.
+services.AddSingleton&lt;UserState&gt;();</pre>
+</div></div><p>Now to actually make us of this we need to make sure the EmptyBot Class is constructed with a UserState object, and that the object is stored in a member-level variable.</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Add the new field and a constructor:</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence" data-theme="Confluence">private readonly UserState userState;
+public EmptyBot(UserState userState)
+{
+  this.userState = userState;
+}</pre>
+</div></div><p>We also need to create a new class we can store properties in (the first property is CrimeName): </p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Add a new class ReportingStateProperties</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">public class ReportingStateProperties
+{
+   public string CrimeName {get; set; }  
+}</pre>
+</div></div><p>We can then use those two objects together to store the state of the conversation.</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p> Modify the OnMessageActivityAsync method to look like this:</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence" data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
+{
+  var text = turnContext.Activity.Text.ToLowerInvariant();
+  var reportingUserStateAccessor = this.userState.CreateProperty&lt;ReportingStateProperties&gt;(&quot;reportState&quot;);
+
+  var reportingState = await reportingUserStateAccessor.GetAsync(turnContext, () =&gt; new ReportingStateProperties()); 
+  if (string.IsNullOrEmpty(reportingState.CrimeName))
+  {              
+    reportingState.CrimeName = text;
+    await turnContext.SendActivityAsync($&quot;You want to report {text}.&quot;, cancellationToken: cancellationToken);
+  }
+  await userState.SaveChangesAsync(turnContext, cancellationToken: cancellationToken);
+}</pre>
+</div></div><p>The bot will only ask you to report a crime once now. Give it a test, then commit.</p><p>We can build upon this to build up a chat flow.</p><p> </p><p><strong>Step 4. Over to you.</strong></p><p>Add the remaining steps from the conversation flow.</p><p> A few pointers:</p><ul><li><p> Add new properties to the ReportingStateProperties class to hold more information as you collect it.</p></li><li><p>Add more conditional (if) statements in before the SaveChangesAsync(), to ask questions if you don’t already have them. </p></li><li><p>Don’t ask all the questions in one go! Think about how you can stop the bot from asking all questions in one go (count the steps through using the state properties). </p></li></ul><p>  <strong>Step 5. A challenge</strong></p><p>How can you restart the user's conversation if they type 'restart'.?</p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/1009975304/1010073614.png">image-20200127-144328.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Feb 10, 2020 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
