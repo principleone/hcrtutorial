@@ -1,66 +1,147 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Learning and Development : Bot #2 - Flow #1 - Reporting basic crime information to a Dialog Bot</title>
-        <link rel="stylesheet" href="styles/site.css" type="text/css" />
-        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
 
-    <body class="theme-default aui-theme-default">
-        <div id="page">
-            <div id="main" class="aui-page-panel">
-                <div id="main-header">
-                    <div id="breadcrumb-section">
-                        <ol id="breadcrumbs">
-                            <li class="first">
-                                <span><a href="index.html">Learning and Development</a></span>
-                            </li>
-                                                    <li>
-                                <span><a href="intro.html">HateCrimeReporting - a Microsoft Bot Framework Tutorial</a></span>
-                            </li>
-                                                </ol>
-                    </div>
-                    <h1 id="title-heading" class="pagetitle">
-                                                <span id="title-text">
-                            Learning and Development : Bot #2 - Flow #1 - Reporting basic crime information to a Dialog Bot
-                        </span>
-                    </h1>
+<head>
+    <title>Learning and Development : Bot #2 - Flow #1 - Reporting basic crime information to a Dialog Bot</title>
+    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/afd53ae465.js" crossorigin="anonymous"></script>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body class="theme-default aui-theme-default">
+    <div id="page">
+        <div id="main" class="aui-page-panel">
+            <div id="main-header">
+                <div id="breadcrumb-section">
+                    <ol id="breadcrumbs">
+                        <li class="first">
+                            <span><a href="index.html">Learning and Development</a></span>
+                        </li>
+                        <li>
+                            <span><a href="intro.html">HateCrimeReporting - a Microsoft Bot Framework
+                                    Tutorial</a></span>
+                        </li>
+                    </ol>
                 </div>
+                <h1 id="title-heading" class="pagetitle">
+                    <span id="title-text">
+                        Learning and Development : Bot #2 - Flow #1 - Reporting basic crime information to a Dialog Bot
+                    </span>
+                </h1>
+            </div>
 
-                <div id="content" class="view">
-                    <div class="page-metadata">
-                        
-        
-    
-        
-    
-        
-        
-            Created by <span class='author'> Chris Spearing</span>, last modified on Feb 07, 2020
+            <div id="content" class="view">
+         
+                <div id="main-content" class="wiki-content group">
+                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step1">Step 1</h1>
+                    <p>We are going to start a clean bot for this, it’s a bit easier than refactoring the old one. </p>
+                    <p>First create a new VS Code project. </p>
+                    <p />
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>create a new empty folder on your computer and open that folder in Code).</p>
                         </div>
-                    <div id="main-content" class="wiki-content group">
-                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step1">Step 1</h1><p>We are going to start a clean bot for this, it’s a bit easier than refactoring the old one. </p><p>First create a new VS Code project. </p><p /><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>create a new empty folder on your computer and open that folder in Code).</p></div></div><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>In the terminal run the following to create the new empty bot, and install the package that provides dialog functionality.</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence" data-theme="Confluence">dotnet new -i Microsoft.Bot.Framework.CSharp.EmptyBot::4.6.2
+                    </div>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>In the terminal run the following to create the new empty bot, and install the package
+                                that provides dialog functionality.</p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence"
+                                data-theme="Confluence">dotnet new -i Microsoft.Bot.Framework.CSharp.EmptyBot::4.6.2
 dotnet new emptybot
 
 dotnet add package microsoft.bot.builder.dialogs
 </pre>
-</div></div><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Copy the .gitignore file from the first tutorial into this folder</p><p>Then commit your changes in the terminal: </p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence" data-theme="Confluence">git init
+                        </div>
+                    </div>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Copy the .gitignore file from the first tutorial into this folder</p>
+                            <p>Then commit your changes in the terminal: </p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence"
+                                data-theme="Confluence">git init
 
 git add -A</pre>
-</div></div><h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step2.">Step 2.</h1><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><span class="inline-comment-marker" data-ref="52fd4a8c-735b-49a8-8226-63f758503e56">Rename the EmptyBot class</span> to be HCRDialogBot (right-click and rename in the code editing window) - make sure you rename the file too (right click and rename that</p></div></div><p>Now we’re going to make it a dialog aware bot:</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>First, make sure you add the referen<span class="inline-comment-marker" data-ref="aa812379-06e6-4e2e-9ae5-7b7a35c256f8">ce at the top:</span></p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">using Microsoft.Bot.Builder.Dialog;</pre>
-</div></div><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Now create the DialogSet as a field and initialise in the constructor, this will track our bot’s dialogs. #</p><p>We’re also going to declare our first dialog.</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">    private readonly DialogSet dialogSet;
+                        </div>
+                    </div>
+                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step2.">Step 2.</h1>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p><span class="inline-comment-marker"
+                                    data-ref="52fd4a8c-735b-49a8-8226-63f758503e56">Rename the EmptyBot class</span> to
+                                be HCRDialogBot (right-click and rename in the code editing window) - make sure you
+                                rename the file too (right click and rename that</p>
+                        </div>
+                    </div>
+                    <p>Now we’re going to make it a dialog aware bot:</p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>First, make sure you add the referen<span class="inline-comment-marker"
+                                    data-ref="aa812379-06e6-4e2e-9ae5-7b7a35c256f8">ce at the top:</span></p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence">using Microsoft.Bot.Builder.Dialog;</pre>
+                        </div>
+                    </div>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Now create the DialogSet as a field and initialise in the constructor, this will track
+                                our bot’s dialogs. #</p>
+                            <p>We’re also going to declare our first dialog.</p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence">    private readonly DialogSet dialogSet;
 
         public HCRDialogBot()
         {            
             dialogSet = new DialogSet();
             dialogSet.Add(new GreetingDialog())
         }</pre>
-</div></div><p /><p>That new class, GreetingDialog will not yet exist. You can use VSCodes Fixes system to automatically create it as a new type. </p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Click on GreetingDialog in the code editor and then click on the yellow lightbulb, choose to generate the class.</p></div></div><p>This produces:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">
+                        </div>
+                    </div>
+                    <p />
+                    <p>That new class, GreetingDialog will not yet exist. You can use VSCodes Fixes system to
+                        automatically create it as a new type. </p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Click on GreetingDialog in the code editor and then click on the yellow lightbulb, choose
+                                to generate the class.</p>
+                        </div>
+                    </div>
+                    <p>This produces:</p>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence">
 namespace HCRDialogs
 {
    internal class GreetingDialog : Dialog
@@ -70,11 +151,35 @@ namespace HCRDialogs
       }
    }
 }</pre>
-</div></div><p>We are going to make this a ComponentDialog.</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Change the type from which the class inherits to be a ComponentDialog</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">   internal class GreetingDialog : ComponentDialog
+                        </div>
+                    </div>
+                    <p>We are going to make this a ComponentDialog.</p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Change the type from which the class inherits to be a ComponentDialog</p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence">   internal class GreetingDialog : ComponentDialog
 </pre>
-</div></div><p>Next we need to create the dialog. A simple ‘waterfall’ will suffice for us here:</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Copy or type out this to make you constructor</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence" data-theme="Confluence">    public GreetingDialog()       
+                        </div>
+                    </div>
+                    <p>Next we need to create the dialog. A simple ‘waterfall’ will suffice for us here:</p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Copy or type out this to make you constructor</p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
+                                data-theme="Confluence">    public GreetingDialog()       
       {
          var waterfallSteps = new WaterfallStep[]
         {
@@ -88,22 +193,78 @@ namespace HCRDialogs
          InitialDialogId = nameof(WaterfallDialog);
 
       }</pre>
-</div></div><p>OK, that’s it ready to go. It just doesn’t do very much. Let’s add our first ‘prompt’.</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>In the waterfallSteps array, add an element called PromptForCrimeType as below.</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">  var waterfallSteps = new WaterfallStep[]
+                        </div>
+                    </div>
+                    <p>OK, that’s it ready to go. It just doesn’t do very much. Let’s add our first ‘prompt’.</p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>In the waterfallSteps array, add an element called PromptForCrimeType as below.</p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence">  var waterfallSteps = new WaterfallStep[]
         {
          PromptForCrimeType,
         };</pre>
-</div></div><div class="panel" style="background-color: #EAE6FF;border-color: #998DD9;border-width: 1px;"><div class="panelContent" style="background-color: #EAE6FF;">
-<p>The WaterfallStep type of this array, is what is known as a delegate in C#, that is, it expects a method with a particular signature, i.e. a particular return type and parameters. </p>
-</div></div><p>Because we haven’t created that method, VS Code will ‘lint’ this - i.e. underline it with a red squiggly line. Helpfully if you click on it, a light-bulb appears that you can click on for suggestions. </p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Use Visual Studio code’s Show Fixes feature to create a new method.</p></div></div><p>This will produce the below, you can create manually if anything goes wrong:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">private Task&lt;DialogTurnResult&gt; PromptForCrimeType(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+                        </div>
+                    </div>
+                    <div class="panel" style="background-color: #EAE6FF;border-color: #998DD9;border-width: 1px;">
+                        <div class="panelContent" style="background-color: #EAE6FF;">
+                            <p>The WaterfallStep type of this array, is what is known as a delegate in C#, that is, it
+                                expects a method with a particular signature, i.e. a particular return type and
+                                parameters. </p>
+                        </div>
+                    </div>
+                    <p>Because we haven’t created that method, VS Code will ‘lint’ this - i.e. underline it with a red
+                        squiggly line. Helpfully if you click on it, a light-bulb appears that you can click on for
+                        suggestions. </p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Use Visual Studio code’s Show Fixes feature to create a new method.</p>
+                        </div>
+                    </div>
+                    <p>This will produce the below, you can create manually if anything goes wrong:</p>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence">private Task&lt;DialogTurnResult&gt; PromptForCrimeType(WaterfallStepContext stepContext, CancellationToken cancellationToken)
 {
   throw new NotImplementedException();
 }</pre>
-</div></div><p>Now let’s get it to do something:</p><p>As with our basic bot in the first guide 1, we need to declare a constant: </p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Add this to your class</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">public const string WhatCrimeMessage = &quot;What type of hate crime are you reporting?&quot;;</pre>
-</div></div><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Then modify the auto generated method</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">
+                        </div>
+                    </div>
+                    <p>Now let’s get it to do something:</p>
+                    <p>As with our basic bot in the first guide 1, we need to declare a constant: </p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Add this to your class</p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence">public const string WhatCrimeMessage = &quot;What type of hate crime are you reporting?&quot;;</pre>
+                        </div>
+                    </div>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Then modify the auto generated method</p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence">
       private async Task&lt;DialogTurnResult&gt; PromptForCrimeType(WaterfallStepContext stepContext, CancellationToken cancellationToken)
       {
            return await stepContext.PromptAsync(nameof(TextPrompt),
@@ -113,12 +274,41 @@ namespace HCRDialogs
                 },
                 cancellationToken);
       }</pre>
-</div></div><div class="panel" style="background-color: #EAE6FF;border-color: #998DD9;border-width: 1px;"><div class="panelContent" style="background-color: #EAE6FF;">
-<p>Note the ‘async' keyword in the method’s declaration above. This wasn’t in the generated output. The IDE prompted me to add this because I used the ‘await’ keyword. </p>
-</div></div><div class="confluence-information-macro confluence-information-macro-note"><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>I also had to import the library that MessageFactory is in, i.e. add at the top:</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">using Microsoft.Bot.Builder;</pre>
-</div></div><h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step3.">Step 3.</h1><p>Now, before it will run our dialog, we just need to make sure it’s actually launched. </p><p>In our HCRDialogBot class, we now need to make a couple of changes. </p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Use the following, I’ll explain what it does below. </p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence" data-theme="Confluence">   public class HCRDialogBot : IBot
+                        </div>
+                    </div>
+                    <div class="panel" style="background-color: #EAE6FF;border-color: #998DD9;border-width: 1px;">
+                        <div class="panelContent" style="background-color: #EAE6FF;">
+                            <p>Note the ‘async' keyword in the method’s declaration above. This wasn’t in the generated
+                                output. The IDE prompted me to add this because I used the ‘await’ keyword. </p>
+                        </div>
+                    </div>
+                    <div class="confluence-information-macro confluence-information-macro-note"><span
+                            class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>I also had to import the library that MessageFactory is in, i.e. add at the top:</p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence">using Microsoft.Bot.Builder;</pre>
+                        </div>
+                    </div>
+                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step3.">Step 3.</h1>
+                    <p>Now, before it will run our dialog, we just need to make sure it’s actually launched. </p>
+                    <p>In our HCRDialogBot class, we now need to make a couple of changes. </p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Use the following, I’ll explain what it does below. </p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
+                                data-theme="Confluence">   public class HCRDialogBot : IBot
    {
       private readonly DialogSet dialogSet;
       private readonly ConversationState conversationState;
@@ -157,10 +347,37 @@ namespace HCRDialogs
          }
       }
    }</pre>
-</div></div><div class="panel" style="background-color: #EAE6FF;border-color: #998DD9;border-width: 1px;"><div class="panelContent" style="background-color: #EAE6FF;">
-<p>From the top, we don’t need to inherit from the Activity Handler anymore, we are going to define our own bot fully (hence the IBot interface).</p><p>We are going to use a ConversationState object (to hold state about which dialog the user is in). </p><p>We have removed the old <code>OnMembersAddedAsync</code> method, as we are going to manage the interaction through the dialog - we have added the OnTurnAsync method, which will ensure that the dialog is started (if not currently active), or c<span class="inline-comment-marker" data-ref="a1c3d0b8-a16e-4106-9576-2c0f63c68bb9">ontinue if it already is. </span></p>
-</div></div><p>Finally, we need to register the ConversationState object with the framework. This class also needs some kind of storage (we will use memory storage again.</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>In Startup.cs, in the <span class="inline-comment-marker" data-ref="88d776bf-28f3-41ac-90ec-94981612dfb0">ConfigureServices</span> method, add the following, and make sure that it references HCRDialogBot and not EmptyBot.</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">// Create the storage we&#39;ll be using for User and Conversation state. (Memory is great for testing purposes.)
+                        </div>
+                    </div>
+                    <div class="panel" style="background-color: #EAE6FF;border-color: #998DD9;border-width: 1px;">
+                        <div class="panelContent" style="background-color: #EAE6FF;">
+                            <p>From the top, we don’t need to inherit from the Activity Handler anymore, we are going to
+                                define our own bot fully (hence the IBot interface).</p>
+                            <p>We are going to use a ConversationState object (to hold state about which dialog the user
+                                is in). </p>
+                            <p>We have removed the old <code>OnMembersAddedAsync</code> method, as we are going to
+                                manage the interaction through the dialog - we have added the OnTurnAsync method, which
+                                will ensure that the dialog is started (if not currently active), or c<span
+                                    class="inline-comment-marker"
+                                    data-ref="a1c3d0b8-a16e-4106-9576-2c0f63c68bb9">ontinue if it already is. </span>
+                            </p>
+                        </div>
+                    </div>
+                    <p>Finally, we need to register the ConversationState object with the framework. This class also
+                        needs some kind of storage (we will use memory storage again.</p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>In Startup.cs, in the <span class="inline-comment-marker"
+                                    data-ref="88d776bf-28f3-41ac-90ec-94981612dfb0">ConfigureServices</span> method, add
+                                the following, and make sure that it references HCRDialogBot and not EmptyBot.</p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence">// Create the storage we&#39;ll be using for User and Conversation state. (Memory is great for testing purposes.)
 services.AddSingleton&lt;IStorage, MemoryStorage&gt;();
 
 // Create the User state.
@@ -171,14 +388,41 @@ services.AddSingleton&lt;ConversationState&gt;();
 
 //Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
 services.AddTransient&lt;IBot, HCRDialogBot&gt;();</pre>
-</div></div><p>OK, lots done here. </p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><span class="inline-comment-marker" data-ref="f3f652f9-e3aa-4578-b62b-febeabb8c679">Try running the bot (you will have to say hello to it before it messages you), if it works, commit your changes!</span></p></div></div><h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step4-extendingthedialog.">Step 4 - extending the dialog. </h1><p>This step should be a bit simpler.</p><p>We begin by adding the next step as as a method inside our GreetingDialog constructor. </p><p>We can use Code’s Show Fixes prompt to generate this methods too:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">    var waterfallSteps = new WaterfallStep[]
+                        </div>
+                    </div>
+                    <p>OK, lots done here. </p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p><span class="inline-comment-marker" data-ref="f3f652f9-e3aa-4578-b62b-febeabb8c679">Try
+                                    running the bot (you will have to say hello to it before it messages you), if it
+                                    works, commit your changes!</span></p>
+                        </div>
+                    </div>
+                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step4-extendingthedialog.">Step 4 -
+                        extending the dialog. </h1>
+                    <p>This step should be a bit simpler.</p>
+                    <p>We begin by adding the next step as as a method inside our GreetingDialog constructor. </p>
+                    <p>We can use Code’s Show Fixes prompt to generate this methods too:</p>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence">    var waterfallSteps = new WaterfallStep[]
          {
             PromptForCrimeType,
             PromptForCrimeTime,            
          };</pre>
-</div></div><p /><p>Prompt for crime time should look like this. Note that we are storing the result from the previous step - the crime type - in the stepContext’s Values dictionary).  </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">      private async Task&lt;DialogTurnResult&gt; PromptForCrimeTime(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+                        </div>
+                    </div>
+                    <p />
+                    <p>Prompt for crime time should look like this. Note that we are storing the result from the
+                        previous step - the crime type - in the stepContext’s Values dictionary). </p>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence">      private async Task&lt;DialogTurnResult&gt; PromptForCrimeTime(WaterfallStepContext stepContext, CancellationToken cancellationToken)
       {
          stepContext.Values[&quot;CrimeType&quot;] = (string)stepContext.Result;
 
@@ -189,15 +433,70 @@ services.AddTransient&lt;IBot, HCRDialogBot&gt;();</pre>
                 cancellationToken);
       }
 </pre>
-</div></div><p /><h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step5-overtoyou">Step 5 - over to you</h1><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Now add in a step to store the crime time, and to prompt for the bad behaviour. </p></div></div><p>Don’t worry about storing the bad behaviour, we’ll capture that in the next step. </p><span class="confluence-embedded-file-wrapper image-center-wrapper"><img class="confluence-embedded-image image-center" src="attachments/1030782977/1031077900.png" data-image-src="attachments/1030782977/1031077900.png" data-height="846" data-width="1446" data-unresolved-comment-count="0" data-linked-resource-id="1031077900" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20200127-144328.png" data-base-url="https://principleonele.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="1030782977" data-linked-resource-container-version="7" data-media-id="f3588b50-fc8c-4803-af74-c76fad339b5c" data-media-type="file"></span><p /><h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step6.">Step 6. </h1><p>Cool, we now need to end the dialog, and return the information we’ve requested.</p><p>First, we want to package the information up and return it to the user. </p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Create a class called ‘GreetingResult’, and add properties for CrimeType, CrimeTime and CrimeBehaviour:</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> public class GreetingResult
+                        </div>
+                    </div>
+                    <p />
+                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step5-overtoyou">Step 5 - over to
+                        you</h1>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Now add in a step to store the crime time, and to prompt for the bad behaviour. </p>
+                        </div>
+                    </div>
+                    <p>Don’t worry about storing the bad behaviour, we’ll capture that in the next step. </p><span
+                        class="confluence-embedded-file-wrapper image-center-wrapper"><img
+                            class="confluence-embedded-image image-center" src="attachments/1030782977/1031077900.png"
+                            data-image-src="attachments/1030782977/1031077900.png" data-height="846" data-width="1446"
+                            data-unresolved-comment-count="0" data-linked-resource-id="1031077900"
+                            data-linked-resource-version="1" data-linked-resource-type="attachment"
+                            data-linked-resource-default-alias="image-20200127-144328.png"
+                            data-base-url="https://principleonele.atlassian.net/wiki"
+                            data-linked-resource-content-type="image/png" data-linked-resource-container-id="1030782977"
+                            data-linked-resource-container-version="7"
+                            data-media-id="f3588b50-fc8c-4803-af74-c76fad339b5c" data-media-type="file"></span>
+                    <p />
+                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step6.">Step 6. </h1>
+                    <p>Cool, we now need to end the dialog, and return the information we’ve requested.</p>
+                    <p>First, we want to package the information up and return it to the user. </p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Create a class called ‘GreetingResult’, and add properties for CrimeType, CrimeTime and
+                                CrimeBehaviour:</p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence"> public class GreetingResult
    {
       public string CrimeType { get; set; }
       public string CrimeTime { get; set; }
       public string CrimeBehaviour { get; set; }
    }</pre>
-</div></div><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Back in GreetingDialog, add a new step called FinishAsync and generate it’s method. </p></div></div><p>That method, we want to instantiate a new GreetingResult, set it’s values, and then end the dialog, returning the new greeting result.</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Copy the below into your new method (and add the async keyword)</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">      private async Task&lt;DialogTurnResult&gt; FinishAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+                        </div>
+                    </div>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Back in GreetingDialog, add a new step called FinishAsync and generate it’s method. </p>
+                        </div>
+                    </div>
+                    <p>That method, we want to instantiate a new GreetingResult, set it’s values, and then end the
+                        dialog, returning the new greeting result.</p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Copy the below into your new method (and add the async keyword)</p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence">      private async Task&lt;DialogTurnResult&gt; FinishAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
       {
          var greetingResult = new GreetingResult
          {
@@ -208,19 +507,66 @@ services.AddTransient&lt;IBot, HCRDialogBot&gt;();</pre>
 
          return await stepContext.EndDialogAsync(greetingResult, cancellationToken: cancellationToken);
       }</pre>
-</div></div><p>This ends the dialog, but we’re not doing anything with the results yet. </p><div class="panel" style="background-color: #EAE6FF;border-color: #998DD9;border-width: 1px;"><div class="panelContent" style="background-color: #EAE6FF;">
-<p>You can run the bot now, it will ask the three questions in a never ending loop as you talk to it.</p>
-</div></div><p>You may have noticed that, we’re missing those friendly Hi!… and Thank you… messages. Those we don’t want to add to this dialog, but in the main ‘flow’ of the bot. </p><p>So, back in the <code>HCRDialogBot</code>class, in our OnTurnAsync method, let’s add them there. Just as in the first tutorial.</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>First…add two constants at the top of the class.</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">public const string Greeting = &quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what happened, and I will let the club know so they can take action!&quot;;
+                        </div>
+                    </div>
+                    <p>This ends the dialog, but we’re not doing anything with the results yet. </p>
+                    <div class="panel" style="background-color: #EAE6FF;border-color: #998DD9;border-width: 1px;">
+                        <div class="panelContent" style="background-color: #EAE6FF;">
+                            <p>You can run the bot now, it will ask the three questions in a never ending loop as you
+                                talk to it.</p>
+                        </div>
+                    </div>
+                    <p>You may have noticed that, we’re missing those friendly Hi!… and Thank you… messages. Those we
+                        don’t want to add to this dialog, but in the main ‘flow’ of the bot. </p>
+                    <p>So, back in the <code>HCRDialogBot</code>class, in our OnTurnAsync method, let’s add them there.
+                        Just as in the first tutorial.</p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>First…add two constants at the top of the class.</p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence">public const string Greeting = &quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what happened, and I will let the club know so they can take action!&quot;;
 public const string ThankYou = &quot;Thank you, I have stored all that information. Let’s move onto where this happened.&quot;;</pre>
-</div></div><p>Next, in the OnTurnAsync method…before we ‘begindialogasync’, we want to send the greeting.</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Use this snippet:</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> if (dc.ActiveDialog is null)
+                        </div>
+                    </div>
+                    <p>Next, in the OnTurnAsync method…before we ‘begindialogasync’, we want to send the greeting.</p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Use this snippet:</p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence"> if (dc.ActiveDialog is null)
                {
                     await turnContext.SendActivityAsync(MessageFactory.Text(Greeting));
                   await dc.BeginDialogAsync(nameof(GreetingDialog), null, cancellationToken);
                }</pre>
-</div></div><p>Then, to check for the end of the dialog, we want to check the object returned from our call to ContinueDialogResult. This object has a Status property, and a ‘Result’ property, hopefully containing the result from our GreetingDialog. </p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Use this snippet:</p><p>We can use these like this:</p></div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> else
+                        </div>
+                    </div>
+                    <p>Then, to check for the end of the dialog, we want to check the object returned from our call to
+                        ContinueDialogResult. This object has a Status property, and a ‘Result’ property, hopefully
+                        containing the result from our GreetingDialog. </p>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>Use this snippet:</p>
+                            <p>We can use these like this:</p>
+                        </div>
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre class="syntaxhighlighter-pre"
+                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
+                                data-theme="Confluence"> else
                {
                   var continueResult = await dc.ContinueDialogAsync(cancellationToken);
                   if (continueResult.Status == DialogTurnStatus.Complete)
@@ -230,28 +576,41 @@ public const string ThankYou = &quot;Thank you, I have stored all that
                      await turnContext.SendActivityAsync(MessageFactory.Text(ThankYou), cancellationToken);
                   }
                }</pre>
-</div></div><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>OK, try running it, and make sure to commit your changes if it works!</p></div></div><h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step7-Achallenge">Step 7 - A challenge</h1><p>How would you get this Bot to restart if the user types ‘restart’?</p><p /><p /><p /><p /><p /><p /><p /><p /><p /><p /><p /><p />
-                    </div>
-
-                                        <div class="pageSection group">
-                        <div class="pageSectionHeader">
-                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
                         </div>
-
-                        <div class="greybox" align="left">
-                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
-                                <a href="attachments/1030782977/1031077900.png">image-20200127-144328.png</a> (image/png)
-                                <br/>
-                                                    </div>
                     </div>
-                    
-                 
-                </div>             </div> 
-            <div id="footer" role="contentinfo">
-                <section class="footer-body">
-                    <p>Document generated by Confluence on Feb 10, 2020 16:11</p>
-                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
-                </section>
+                    <div class="alert alert-primary" role="alert"><span
+                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                        <div class="confluence-information-macro-body">
+                            <p>OK, try running it, and make sure to commit your changes if it works!</p>
+                        </div>
+                    </div>
+                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step7-Achallenge">Step 7 - A
+                        challenge</h1>
+                    <p>How would you get this Bot to restart if the user types ‘restart’?</p>
+   
+                </div>
+
+                <div class="pageSection group">
+                    <div class="pageSectionHeader">
+                        <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                    </div>
+
+                    <div class="greybox" align="left">
+                        <img src="images/icons/bullet_blue.gif" height="8" width="8" alt="" />
+                        <a href="attachments/1030782977/1031077900.png">image-20200127-144328.png</a> (image/png)
+                        <br />
+                    </div>
+                </div>
+
+
             </div>
-        </div>     </body>
+        </div>
+        <div id="footer" role="contentinfo">
+        <section class="footer-body">
+            <p>Copyright Principle One Ltd 2020</p>              
+        </section>
+    </div>
+    </div>
+</body>
+
 </html>
