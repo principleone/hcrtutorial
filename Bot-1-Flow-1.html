@@ -77,8 +77,7 @@
                     </p>
                     <p><span class="inline-comment-marker" data-ref="892ede0d-f060-4aed-a3bf-2f03e7da2561">In visual
                             studio create your new folder and workspace and initialise a chatbot project:</span></p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p>In the VS Code terminal type</p>
                         </div>
@@ -155,8 +154,7 @@ dotnet new emptybot</pre>
                     <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-endbonusstuff">end bonus
                         stuff</h2>
                     <p>Start it up! </p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p>In the terminal type and run</p>
                         </div>
@@ -176,8 +174,7 @@ dotnet new emptybot</pre>
                                     rel="nofollow">http://localhost:3978/api/messages</a></p>
                         </div>
                     </div>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p>If you point your Bot Framework Emulator at that address, you will find your Bot says
                                 Hello, World!</p>
@@ -189,8 +186,7 @@ dotnet new emptybot</pre>
                     <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Setupthegitrepository">Setup
                         the git repository</h2>
                     <p>Now we need to create a git repository (and tell it to ignore all the binary files).</p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p>In the terminal type and run:</p>
                         </div>
@@ -205,8 +201,7 @@ touch .gitignore</pre>
                     </div>
                     <p>This has created an empty file, it will tell git to ignore files (e.g. binaries and personal VS
                         Code settings), if we tell it what we want it to ignore. </p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p>Navigate to: <a
                                     href="https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore"
@@ -216,8 +211,7 @@ touch .gitignore</pre>
                         </div>
                     </div>
                     <p>Now we need to put the files we do want into source control. </p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p><span class="inline-comment-marker" data-ref="a2eb511b-548a-4e94-85fc-fedced60ce97">In
                                     the terminal type and run:</span></p>
@@ -253,8 +247,7 @@ git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</pre>
                     <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-2a.Changingthegreeting.">2a.
                         Changing the greeting. </h2>
                     <p>Change the welcome message:</p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p>In EmptyBot.cs, change <em>&quot;Hello, World&quot;</em> to:</p>
                             <p><em>&quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what
@@ -266,8 +259,7 @@ git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</pre>
                     <p>You can run that, test it works, and commit (don't forget to add the change first).</p>
                     <p>Next, we need to capture some input from the user. We will need to ask them a question first -
                         that question is &quot;What type of hate crime are you reporting?&quot;.</p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p> So, store that message in a string constant at the top of the class:</p>
                         </div>
@@ -280,8 +272,7 @@ git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</pre>
                         </div>
                     </div>
                     <p>Next, we need to send that message to the user, immediately after the greeting message.</p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p>We can simply copy and paste the greeting message, and change the in-line string be our
                                 new constant:</p>
@@ -295,8 +286,7 @@ git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</pre>
 await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellationToken: cancellationToken);               </pre>
                         </div>
                     </div>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p><span class="inline-comment-marker" data-ref="3459ca30-d539-4f23-bc7e-d5a0ba35e900">Run
                                     it, and test. If it works, commit again if you like.</span></p>
@@ -308,8 +298,7 @@ await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellati
                     <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-2b.Handletheuser’sresponse">
                         <strong>2b. Handle the user’s response</strong></h2>
                     <p>What we need to do is handle their 'activities'.</p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p>Add a new method to the EmptyBot class. </p>
                         </div>
@@ -349,8 +338,7 @@ var text = turnContext.Activity.Text.ToLowerInvariant();
 } </pre>
                         </div>
                     </div>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p>Run the bot, test it, then stop the bot (Ctrl + C in Windows or CMD + C in MacOS) and
                                 commit your changes.</p>
@@ -372,8 +360,7 @@ var text = turnContext.Activity.Text.ToLowerInvariant();
                     <p>To store the crime, we need to maintain the state of the conversation.</p>
                     <p>The bot framework gives us a mechanism to do that, the UserState class, this needs a storage
                         mechanism to hold that state in, computer memory will do us for now. </p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p>Let’s register those classes in the Startup.cs ConfigureServices method.</p>
                         </div>
@@ -390,8 +377,7 @@ services.AddSingleton&lt;UserState&gt;();</pre>
                     </div>
                     <p>Now to actually make us of this we need to make sure the EmptyBot Class is constructed with a
                         UserState object, and that the object is stored in a member-level variable.</p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p>Add the new field and a constructor:</p>
                         </div>
@@ -409,8 +395,7 @@ public EmptyBot(UserState userState)
                     </div>
                     <p>We also need to create a new class we can store properties in (the first property is CrimeName): 
                     </p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p>Add a new class ReportingStateProperties</p>
                         </div>
@@ -426,8 +411,7 @@ public EmptyBot(UserState userState)
                         </div>
                     </div>
                     <p>We can then use those two objects together to store the state of the conversation.</p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <div >
                             <p> Modify the OnMessageActivityAsync method to look like this:</p>
                         </div>

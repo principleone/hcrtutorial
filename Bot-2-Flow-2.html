@@ -37,9 +37,8 @@
 
                 <div id="main-content" class="wiki-content group">
                     <h1 id="Bot#2-Flow#2-Settingthelocation-Step1">Step 1</h1>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
-                        <div class="confluence-information-macro-body">
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                        <div>
                             <p>Begin by adding a new class, LocationDialog, it should inherit from ComponentDialog. Add:
                             </p>
                             <p>The WaterfallDialog class, with empty waterfall steps. </p>
@@ -76,9 +75,8 @@
                     <h1 id="Bot#2-Flow#2-Settingthelocation-Step2">Step 2</h1>
                     <p>Let’s begin with the ChoicePrompt, this is a bit new.This type of prompt will allow us to present
                         a fixed set of options to the user, that they can click on to choose.</p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
-                        <div class="confluence-information-macro-body">
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                        <div>
                             <p>Add out first step - ChooseClubPrompt - and generate the method. </p>
                         </div>
                     </div>
@@ -101,18 +99,16 @@
                         </div>
                     </div>
                     <p>To test the dialog, we need to use it from the main HCRDialogBot class. </p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
-                        <div class="confluence-information-macro-body">
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                        <div>
                             <p>In the constructor, add it to the dialogset, just below the GreetingDialog</p>
                         </div>
                     </div>
                     <p>Now, in OnTurnAsync, we want to kick i<span class="inline-comment-marker"
                             data-ref="5078ab2a-f8ac-4e2b-87b6-886d5d60ebea">t off when the GreetingDialog</span> has
                         finished. </p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
-                        <div class="confluence-information-macro-body">
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                        <div>
                             <p>Add the snippet like this:</p>
                         </div>
                     </div>
@@ -141,9 +137,8 @@
                         </div>
                     </div>
                     <h1 id="Bot#2-Flow#2-Settingthelocation-Step3">Step 3</h1>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
-                        <div class="confluence-information-macro-body">
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                        <div>
                             <p>Add a a new class to capture the results of this dialog. </p>
                         </div>
                     </div>
@@ -176,9 +171,8 @@
                     <p>We are going to ask lots of Yes or No questions, and capture a few text answers, and a few
                         numeric answers.</p>
                     <p>To do so we need to add a few more Prompt types. </p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
-                        <div class="confluence-information-macro-body">
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                        <div>
                             <p>In the LocationDialog class constructor, use the AddDialog method to register a new
                                 ConfirmPrompt, called “YesNoPrompt”, and a number prompt for a type of integer, called
                                 “NumPrompt”. </p>
@@ -206,9 +200,8 @@
                             data-ref="1d3993b7-0f21-4b1b-bb05-471e8a2f3cdb">rned from building th</span>e
                         GreetingDialog:</p>
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4a">4a</h2>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
-                        <div class="confluence-information-macro-body">
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                        <div>
                             <p><span class="inline-comment-marker" data-ref="2f4427a9-8fb4-4d29-8bed-2dc7e5022a8d">Send
                                     the next prompt</span>, from a step called NameStandStep. </p>
                             <p>This prompt should store the result of preceeding step in the Context’s Values
@@ -220,9 +213,8 @@
                         </div>
                     </div>
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4b">4b</h2>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
-                        <div class="confluence-information-macro-body">
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                        <div>
                             <p>Add a step called ChooseZoneStep</p>
                             <p>It should store the Stand name. </p>
                             <p>Then send the ‘YesNoPrompt’ with text - “Do you know which zone”.</p>
@@ -230,9 +222,8 @@
                         </div>
                     </div>
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4c">4c</h2>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
-                        <div class="confluence-information-macro-body">
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                        <div>
                             <p>Add another step called NameZoneStep. </p>
                             <p>It should first get the result from the prceeding step. Cast to boolean using the ‘bool’
                                 keyword. You can then use it in a conditional staetment:</p>
@@ -256,9 +247,8 @@
                         </div>
                     </div>
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4d">4d</h2>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
-                        <div class="confluence-information-macro-body">
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                        <div>
                             <p>OK, build up the remaining steps to complete the flow, remember to send the ‘YesNoPrompt’
                                 first, then either a Text Prompt or a NumPrompt. Make sure you store the text or number
                                 values in the stepcontext’s Values dictionary.</p>
@@ -273,9 +263,8 @@
                     </div>
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4e">4e</h2>
                     <p>After the final question (to get the Reporter’s seat)..</p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
-                        <div class="confluence-information-macro-body">
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                        <div>
                             <p>Add a step to capture it, and move immediately on to the FinishAsync:</p>
                         </div>
                     </div>
@@ -326,9 +315,8 @@
                     </div>
                     <h1 id="Bot#2-Flow#2-Settingthelocation-Step6">Step 6</h1>
                     <p>Finally, we’re going to say thank you, and prepare to capture the next dialog.</p>
-                    <div class="alert alert-primary" role="alert"><span
-                            class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span>
-                        <div class="confluence-information-macro-body">
+                    <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                        <div>
                             <p>Back in the HCRDialog class, in the OnTurnAsync, extend the method to handle the
                                 completion of this dialog as below:</p>
                         </div>
@@ -360,7 +348,7 @@
                     <p />
                     <div class="alert alert-success" role="alert"><span
                             class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon"></span>
-                        <div class="confluence-information-macro-body">
+                        <div>
                             <p>Good job, you should now have a working chatbot, with two Dialogs. Give it a test, and
                                 commit your changes.</p>
                             <p>You should now have a good grasp of how to build up a bot using dialogs. Make sure you
