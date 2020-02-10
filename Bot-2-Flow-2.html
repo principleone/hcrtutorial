@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>HCR Bot Tutorial : Bot #2 - Flow #2 - Setting the location</title>
     <link rel="stylesheet" href="styles/site.css" type="text/css" />
@@ -10,8 +9,7 @@
     <script src="https://kit.fontawesome.com/afd53ae465.js" crossorigin="anonymous"></script>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
-
-<body class="theme-default aui-theme-default">
+<body class="container">
     <div id="page">
         <div id="main" class="aui-page-panel">
             <div id="main-header">
@@ -32,20 +30,15 @@
                     </span>
                 </h1>
             </div>
-
             <div id="content" class="view">
-
                 <div id="main-content" class="wiki-content group">
                     <h1 id="Bot#2-Flow#2-Settingthelocation-Step1">Step 1</h1>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             Begin by adding a new class, LocationDialog, it should inherit from ComponentDialog. Add:
-
                             The WaterfallDialog class, with empty waterfall steps.
                             A text prompt,
                             and a ChoicePrompt, with a name of “ClubPrompt”.
                             Also tell it that the InitialDialog is the waterfalldialog.
-
                     </div>
                     <span class="inline-comment-marker" data-ref="79aa4b97-644f-4888-bd4c-7cae9044300f">You should
                         end up with something that looks like thi</span>s@
@@ -58,14 +51,11 @@
       {         
          var waterfallSteps = new WaterfallStep[]
          {
-
          };
-
          //Register the waterfall dialog. 
          AddDialog(new WaterfallDialog(nameof(WaterfallDialog), waterfallSteps));
          //Register text prompts, so we can re-use them. 
          AddDialog(new TextPrompt(nameof(TextPrompt)));
-
          AddDialog(new ChoicePrompt(&quot;ClubPrompt&quot;));
          //Make sure we start with the waterfall dialog
          InitialDialogId = nameof(WaterfallDialog);
@@ -76,9 +66,7 @@
                     Let’s begin with the ChoicePrompt, this is a bit new.This type of prompt will allow us to present
                     a fixed set of options to the user, that they can click on to choose.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             Add out first step - ChooseClubPrompt - and generate the method.
-
                     </div>
                     Into that method, we’re going to present some choices, a prompt to pick one, and a retry prompt
                     in-case they send back something we don’t understand (e.g. they type a club name we don’t
@@ -100,17 +88,13 @@
                     </div>
                     To test the dialog, we need to use it from the main HCRDialogBot class.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             In the constructor, add it to the dialogset, just below the GreetingDialog
-
                     </div>
                     Now, in OnTurnAsync, we want to kick i<span class="inline-comment-marker"
                         data-ref="5078ab2a-f8ac-4e2b-87b6-886d5d60ebea">t off when the GreetingDialog</span> has
                     finished.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             Add the snippet like this:
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -120,12 +104,10 @@
                {
                   var lastdialog = dc.ActiveDialog.Id;
                   var continueResult = await dc.ContinueDialogAsync(cancellationToken);
-
                   if (continueResult.Status == DialogTurnStatus.Complete)
                      switch (lastdialog)
                      {
                         case nameof(GreetingDialog):
-
                            var greetingResult = (GreetingResult)continueResult.Result;
                            await turnContext.SendActivityAsync(MessageFactory.Text($&quot;You have reported a crime of {greetingResult.CrimeType}.&quot;), cancellationToken);
                            await turnContext.SendActivityAsync(MessageFactory.Text(ThankYou), cancellationToken);
@@ -138,9 +120,7 @@
                     </div>
                     <h1 id="Bot#2-Flow#2-Settingthelocation-Step3">Step 3</h1>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             Add a a new class to capture the results of this dialog.
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -172,11 +152,9 @@
                     numeric answers.
                     To do so we need to add a few more Prompt types.</p>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             In the LocationDialog class constructor, use the AddDialog method to register a new
                             ConfirmPrompt, called “YesNoPrompt”, and a number prompt for a type of integer, called
                             “NumPrompt”.
-
                     </div>
                     Our constructor should contain the following:
                     <div class="code panel pdl" style="border-width: 1px;">
@@ -201,7 +179,6 @@
                     GreetingDialog:
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4a">4a</h2>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             <span class="inline-comment-marker" data-ref="2f4427a9-8fb4-4d29-8bed-2dc7e5022a8d">Send
                                 the next prompt</span>, from a step called NameStandStep.
                             This prompt should store the result of preceeding step in the Context’s Values
@@ -210,26 +187,21 @@
                             <code>((FoundChoice)stepContext.Result).Value</code>
                             This is should make use of the TextPrompt. Send the question from the flow diagram above.
 
-
                     </div>
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4b">4b</h2>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             Add a step called ChooseZoneStep
                             It should store the Stand name.
                             Then send the ‘YesNoPrompt’ with text - “Do you know which zone”.
                             Include a retry with ‘please provide a Yes or No answer’.
-
                     </div>
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4c">4c</h2>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             Add another step called NameZoneStep.
                             It should first get the result from the prceeding step. Cast to boolean using the ‘bool’
                             keyword. You can then use it in a conditional staetment:
                             if the result is true, send the next text prompt - “Which Zone?”
                             if the result is false, call a method ‘FinishAsync', e..g:
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -248,25 +220,20 @@
                     </div>
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4d">4d</h2>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             OK, build up the remaining steps to complete the flow, remember to send the ‘YesNoPrompt’
                             first, then either a Text Prompt or a NumPrompt. Make sure you store the text or number
                             values in the stepcontext’s Values dictionary.
-
                     </div>
                     <div class="alert alert-info" role="alert">
                         <i class="fa fa-info"></i>
                             To get the row - send a Text Prompt.
                             To get the seat - send a NumPrompt -cast the result to an int.
                             For the reporter’s seat, send a NumPrompt - cast the result to an int.
-
                     </div>
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4e">4e</h2>
                     After the final question (to get the Reporter’s seat)..
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             Add a step to capture it, and move immediately on to the FinishAsync:
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -303,7 +270,6 @@
                     <div class="alert alert-info" role="alert">
                         <i class="fa fa-info"></i>
                             This block uses something known as the ‘ternary’ operator, it is in the convention of:
-
                             <em>boolean condition ? if true : else, false.</em>
                             It is typically used as above, to do a quick check inline to choose a value.
                             You can read more on it in the Microsoft documentation here: <a
@@ -311,15 +277,12 @@
                                 class="external-link"
                                 rel="nofollow">https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator</a>
 
-
                     </div>
                     <h1 id="Bot#2-Flow#2-Settingthelocation-Step6">Step 6</h1>
                     Finally, we’re going to say thank you, and prepare to capture the next dialog.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             Back in the HCRDialog class, in the OnTurnAsync, extend the method to handle the
                             completion of this dialog as below:
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -330,13 +293,11 @@
                      switch (lastdialog)
                      {
                         case nameof(GreetingDialog):
-
                            var greetingResult = (GreetingResult)continueResult.Result;
                            await turnContext.SendActivityAsync(MessageFactory.Text($&quot;You have reported a crime of {greetingResult.CrimeType}.&quot;), cancellationToken);
                            await turnContext.SendActivityAsync(MessageFactory.Text(ThankYou), cancellationToken);
                            await dc.BeginDialogAsync(nameof(LocationDialog), null, cancellationToken);
                            break;
-
                         case nameof(LocationDialog):
                            var locationResult = (LocationResult)continueResult.Result;
                            await turnContext.SendActivityAsync(MessageFactory.Text(&quot;Thanks, I now have all the location details stored. Let’s move onto description of the offenders.&quot;), cancellationToken);
@@ -347,13 +308,11 @@
                     </div>
                     <p />
                     <div class="alert alert-success" role="alert"><i class="fa fa-check"></i>
-
                             Good job, you should now have a working chatbot, with two Dialogs. Give it a test, and
                             commit your changes.
                             You should now have a good grasp of how to build up a bot using dialogs. Make sure you
                             understand what as going on in each step, and when you’re ready, move on to next stage
                             of the tutorial.
-
                     </div>
                 </div>
             </div>
@@ -365,5 +324,4 @@
         </div>
     </div>
 </body>
-
 </html>

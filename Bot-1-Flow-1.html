@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>HCR Bot Tutorial : Bot #1 - Flow #1 - Reporting the Basic Crime information to a simple echo bot
     </title>
@@ -11,8 +10,7 @@
         <script src="https://kit.fontawesome.com/afd53ae465.js" crossorigin="anonymous"></script>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
-
-<body class="theme-default aui-theme-default">
+<body class="container">
     <div id="page">
         <div id="main" class="aui-page-panel">
             <div id="main-header">
@@ -34,9 +32,7 @@
                     </span>
                 </h1>
             </div>
-
             <div id="content" class="view">
-
                 <div id="main-content" class="wiki-content group">
                     <h1 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Prerequisities:">
                         Prerequisities:</h1>
@@ -67,20 +63,16 @@
                                     data-linked-resource-type="page">Environment Settings</a> .
                         </li>
                     </ul>
-
                     <h1
                         id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Step1-ScaffoldaBot/Hello,World!">
                         <strong>Step 1 - Scaffold a Bot / Hello, World!</strong></h1>
                     Before we start, the Bot runs on a framework, and frameworks are usually complex. There are a lot
                         of bits that make this work, but don't worry if they don't make sense to you, we will just
                         lightly touch on them, then focus on the bits we care about, if you have any questions do ask.
-
                     <span class="inline-comment-marker" data-ref="892ede0d-f060-4aed-a3bf-2f03e7da2561">In visual
                             studio create your new folder and workspace and initialise a chatbot project:</span>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             In the VS Code terminal type
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -119,7 +111,6 @@ dotnet new emptybot</pre>
                         you can think of it as a special kind of factory - you tell it what classes you will need to
                         build your program and when you ask for a class, it will try to build that classes and it's
                         dependencies. These classes are known as services.
-
                     What we are seeing here is the registration of 3 important services:
                     <ol>
                         <li>
@@ -133,7 +124,6 @@ dotnet new emptybot</pre>
                             EmptyBot - this is the most important service. This is our chatbot.
                         </li>
                     </ol>
-
                     The contents of the Configure method are used to configure the further application settings. We
                         won't worry about these for now.
                     <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-EmptyBot.cs">EmptyBot.cs</h2>
@@ -155,9 +145,7 @@ dotnet new emptybot</pre>
                         stuff</h2>
                     Start it up! 
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             In the terminal type and run
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -167,28 +155,22 @@ dotnet new emptybot</pre>
                         </div>
                     </div>
                     <div class="alert alert-success" role="alert"><i class="fa fa-check"></i>
-
                             In short, what we have done, is made a chatbot that runs at: <a
                                     href="http://localhost:3978/api/messages" class="external-link"
                                     rel="nofollow">http://localhost:3978/api/messages</a>
-
                     </div>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             If you point your Bot Framework Emulator at that address, you will find your Bot says
                                 Hello, World!
                             That’s all it does for now. Let’s shutdown the app. In the terminal, use Ctrl + C (or Cmd
                                 + C) to stop the programme. 
-
                     </div>
                     This is a good point to backup our work using git.
                     <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Setupthegitrepository">Setup
                         the git repository</h2>
                     Now we need to create a git repository (and tell it to ignore all the binary files).
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             In the terminal type and run:
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -201,20 +183,16 @@ touch .gitignore</pre>
                     This has created an empty file, it will tell git to ignore files (e.g. binaries and personal VS
                         Code settings), if we tell it what we want it to ignore. 
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             Navigate to: <a
                                     href="https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore"
                                     class="external-link"
                                     rel="nofollow">https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore</a>
                                 and copy the contents into the new .gitignore file (make sure you save it).
-
                     </div>
                     Now we need to put the files we do want into source control. 
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             <span class="inline-comment-marker" data-ref="a2eb511b-548a-4e94-85fc-fedced60ce97">In
                                     the terminal type and run:</span>
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -247,21 +225,17 @@ git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</pre>
                         Changing the greeting. </h2>
                     Change the welcome message:
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             In EmptyBot.cs, change <em>&quot;Hello, World&quot;</em> to:
                             <em>&quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what
                                     happened, and I will let the <span class="inline-comment-marker"
                                         data-ref="2c182147-88aa-43d9-96ca-d68cdd2b826c">club know</span> so they can
                                     take action.&quot;</em>
-
                     </div>
                     You can run that, test it works, and commit (don't forget to add the change first).
                     Next, we need to capture some input from the user. We will need to ask them a question first -
                         that question is &quot;What type of hate crime are you reporting?&quot;.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                              So, store that message in a string constant at the top of the class:
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -272,9 +246,7 @@ git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</pre>
                     </div>
                     Next, we need to send that message to the user, immediately after the greeting message.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             We can simply copy and paste the greeting message, and change the in-line string be our new constant:
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -285,10 +257,8 @@ await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellati
                         </div>
                     </div>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             <span class="inline-comment-marker" data-ref="3459ca30-d539-4f23-bc7e-d5a0ba35e900">Run
                                     it, and test. If it works, commit again if you like.</span>
-
                     </div>
                     You will see your message now comes through, but if you try responding, your Bot won't respond
                         back.<br />Now we know how to send greeting messages to the user. Next we need to interact with
@@ -297,9 +267,7 @@ await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellati
                         <strong>2b. Handle the user’s response</strong></h2>
                     What we need to do is handle their 'activities'.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             Add a new method to the EmptyBot class. 
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -313,7 +281,6 @@ await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellati
                     This will handle anything the user sends back to us, we will want to capture their feedback and
                         store it for use later on.
                     Our user is going to send some text at this point, we can get that from their latest activity:
-
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
                             <pre class="syntaxhighlighter-pre"
@@ -337,10 +304,8 @@ var text = turnContext.Activity.Text.ToLowerInvariant();
                         </div>
                     </div>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             Run the bot, test it, then stop the bot (Ctrl + C in Windows or CMD + C in MacOS) and
                                 commit your changes.
-
                     </div>
                     <h1 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Step3"><strong>Step
                             3</strong></h1>
@@ -359,9 +324,7 @@ var text = turnContext.Activity.Text.ToLowerInvariant();
                     The bot framework gives us a mechanism to do that, the UserState class, this needs a storage
                         mechanism to hold that state in, computer memory will do us for now. 
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             Let’s register those classes in the Startup.cs ConfigureServices method.
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -376,9 +339,7 @@ services.AddSingleton&lt;UserState&gt;();</pre>
                     Now to actually make us of this we need to make sure the EmptyBot Class is constructed with a
                         UserState object, and that the object is stored in a member-level variable.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             Add the new field and a constructor:
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -392,11 +353,8 @@ public EmptyBot(UserState userState)
                         </div>
                     </div>
                     We also need to create a new class we can store properties in (the first property is CrimeName): 
-
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                             Add a new class ReportingStateProperties
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -410,9 +368,7 @@ public EmptyBot(UserState userState)
                     </div>
                     We can then use those two objects together to store the state of the conversation.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-
                              Modify the OnMessageActivityAsync method to look like this:
-
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
@@ -422,7 +378,6 @@ public EmptyBot(UserState userState)
 {
   var text = turnContext.Activity.Text.ToLowerInvariant();
   var reportingUserStateAccessor = this.userState.CreateProperty&lt;ReportingStateProperties&gt;(&quot;reportState&quot;);
-
   var reportingState = await reportingUserStateAccessor.GetAsync(turnContext, () =&gt; new ReportingStateProperties()); 
   if (string.IsNullOrEmpty(reportingState.CrimeName))
   {              
@@ -435,7 +390,6 @@ public EmptyBot(UserState userState)
                     </div>
                     The bot will only ask you to report a crime once now. Give it a test, then commit.
                     We can build upon this to build up a chat flow.
-
                     <h1><strong>Step 4. Over to you.</strong></h1>
                     Add the remaining steps from the conversation flow.
                      A few pointers:
@@ -455,9 +409,7 @@ public EmptyBot(UserState userState)
                     </ul>
                   <h1><strong>Step 5. A challenge</strong></h1>
                     How can you restart the user's conversation if they type 'restart'.?
-
                 </div>
-
 
             </div>
         </div>
@@ -468,5 +420,4 @@ public EmptyBot(UserState userState)
         </div>
     </div>
 </body>
-
 </html>
