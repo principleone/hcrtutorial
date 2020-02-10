@@ -78,7 +78,7 @@
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="sh"
                                 data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence"
                                 data-theme="Confluence">dotnet new -i Microsoft.Bot.Framework.CSharp.EmptyBot
 dotnet new emptybot</code></pre>
@@ -98,7 +98,7 @@ dotnet new emptybot</code></pre>
                     as an Http Web Service when you start it up, hence the bit in Program.:
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">WebHost.CreateDefaultBuilder(args)
                 .UseStartup&lt;Startup&gt;(); </code></pre>
@@ -151,7 +151,7 @@ dotnet new emptybot</code></pre>
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="sh"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">dotnet run</code></pre>
                         </div>
@@ -176,7 +176,7 @@ dotnet new emptybot</code></pre>
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="sh"
                                 data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence"
                                 data-theme="Confluence">git init 
 touch .gitignore</code></pre>
@@ -198,7 +198,7 @@ touch .gitignore</code></pre>
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="sh"
                                 data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence"
                                 data-theme="Confluence">git add -A
 git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</code></pre>
@@ -233,7 +233,7 @@ git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</code></p
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
                                 data-theme="Confluence">public const string WhatMessage = &quot;What type of hate crime are you reporting?&quot;;</code></pre>
                         </div>
@@ -245,7 +245,7 @@ git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</code></p
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">await turnContext.SendActivityAsync(MessageFactory.Text($&quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what happened, and I will let the club know so they can take action!&quot;), cancellationToken);
 await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellationToken: cancellationToken);               </code></pre>
@@ -266,7 +266,7 @@ await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellati
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
                                 data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
 {
@@ -278,7 +278,7 @@ await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellati
                     Our user is going to send some text at this point, we can get that from their latest activity:
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
 {
@@ -289,7 +289,7 @@ var text = turnContext.Activity.Text.ToLowerInvariant();
                     To test this, we can then replay it back to them:
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
 {
@@ -323,7 +323,7 @@ var text = turnContext.Activity.Text.ToLowerInvariant();
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
                                 data-theme="Confluence">// Create the storage we&#39;ll be using for User and Conversation state. (Memory is great for testing purposes.)
 services.AddSingleton&lt;IStorage, MemoryStorage&gt;();
@@ -338,7 +338,7 @@ services.AddSingleton&lt;UserState&gt;();</code></pre>
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
                                 data-theme="Confluence">private readonly UserState userState;
 public EmptyBot(UserState userState)
@@ -353,7 +353,7 @@ public EmptyBot(UserState userState)
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">public class ReportingStateProperties
 {
@@ -367,7 +367,7 @@ public EmptyBot(UserState userState)
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
                                 data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
 {

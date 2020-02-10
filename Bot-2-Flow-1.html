@@ -47,7 +47,7 @@
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="sh"
                                 data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence"
                                 data-theme="Confluence">dotnet new -i Microsoft.Bot.Framework.CSharp.EmptyBot::4.6.2
 dotnet new emptybot
@@ -61,7 +61,7 @@ dotnet add package microsoft.bot.builder.dialogs
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="sh"
                                 data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence"
                                 data-theme="Confluence">git init
 git add -A</code></pre>
@@ -81,7 +81,7 @@ git add -A</code></pre>
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">using Microsoft.Bot.Builder.Dialog;</code></pre>
                         </div>
@@ -93,7 +93,7 @@ git add -A</code></pre>
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">    private readonly DialogSet dialogSet;
         public HCRDialogBot()
@@ -113,7 +113,7 @@ git add -A</code></pre>
                     This produces:
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">
 namespace HCRDialogs
@@ -133,7 +133,7 @@ namespace HCRDialogs
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">   internal class GreetingDialog : ComponentDialog
 </code></pre>
@@ -145,7 +145,7 @@ namespace HCRDialogs
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
                                 data-theme="Confluence">    public GreetingDialog()       
       {
@@ -167,7 +167,7 @@ namespace HCRDialogs
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">  var waterfallSteps = new WaterfallStep[]
         {
@@ -190,7 +190,7 @@ namespace HCRDialogs
                     This will produce the below, you can create manually if anything goes wrong:
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">private Task&lt;DialogTurnResult&gt; PromptForCrimeType(WaterfallStepContext stepContext, CancellationToken cancellationToken)
 {
@@ -205,7 +205,7 @@ namespace HCRDialogs
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">public const string WhatCrimeMessage = &quot;What type of hate crime are you reporting?&quot;;</code></pre>
                         </div>
@@ -215,7 +215,7 @@ namespace HCRDialogs
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">
       private async Task&lt;DialogTurnResult&gt; PromptForCrimeType(WaterfallStepContext stepContext, CancellationToken cancellationToken)
@@ -240,7 +240,7 @@ namespace HCRDialogs
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">using Microsoft.Bot.Builder;</code></pre>
                         </div>
@@ -253,7 +253,7 @@ namespace HCRDialogs
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
                                 data-theme="Confluence">   public class HCRDialogBot : IBot
    {
@@ -313,7 +313,7 @@ namespace HCRDialogs
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">// Create the storage we&#39;ll be using for User and Conversation state. (Memory is great for testing purposes.)
 services.AddSingleton&lt;IStorage, MemoryStorage&gt;();
@@ -338,7 +338,7 @@ services.AddTransient&lt;IBot, HCRDialogBot&gt;();</code></pre>
                     We can use Code’s Show Fixes prompt to generate this methods too:
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">    var waterfallSteps = new WaterfallStep[]
          {
@@ -352,7 +352,7 @@ services.AddTransient&lt;IBot, HCRDialogBot&gt;();</code></pre>
                     previous step - the crime type - in the stepContext’s Values dictionary).
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">      private async Task&lt;DialogTurnResult&gt; PromptForCrimeTime(WaterfallStepContext stepContext, CancellationToken cancellationToken)
       {
@@ -385,7 +385,7 @@ services.AddTransient&lt;IBot, HCRDialogBot&gt;();</code></pre>
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence"> public class GreetingResult
    {
@@ -405,7 +405,7 @@ services.AddTransient&lt;IBot, HCRDialogBot&gt;();</code></pre>
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">      private async Task&lt;DialogTurnResult&gt; FinishAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
       {
@@ -434,7 +434,7 @@ services.AddTransient&lt;IBot, HCRDialogBot&gt;();</code></pre>
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">public const string Greeting = &quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what happened, and I will let the club know so they can take action!&quot;;
 public const string ThankYou = &quot;Thank you, I have stored all that information. Let’s move onto where this happened.&quot;;</code></pre>
@@ -446,7 +446,7 @@ public const string ThankYou = &quot;Thank you, I have stored all that
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence"> if (dc.ActiveDialog is null)
                {
@@ -464,7 +464,7 @@ public const string ThankYou = &quot;Thank you, I have stored all that
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre><code class="syntaxhighlighter-pre"
+                            <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence"> else
                {
