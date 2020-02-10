@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>HCR Bot Tutorial : Bot #2 - Flow #2 - Setting the location</title>
     <link rel="stylesheet" href="styles/site.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/afd53ae465.js" crossorigin="anonymous"></script>
-    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 </head>
+
 <body class="container">
     <div id="page">
         <div id="main" class="aui-page-panel">
@@ -34,17 +38,17 @@
                 <div id="main-content" class="wiki-content group">
                     <h1 id="Bot#2-Flow#2-Settingthelocation-Step1">Step 1</h1>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Begin by adding a new class, LocationDialog, it should inherit from ComponentDialog. Add:
-                            The WaterfallDialog class, with empty waterfall steps.
-                            A text prompt,
-                            and a ChoicePrompt, with a name of “ClubPrompt”.
-                            Also tell it that the InitialDialog is the waterfalldialog.
+                        Begin by adding a new class, LocationDialog, it should inherit from ComponentDialog. Add:
+                        The WaterfallDialog class, with empty waterfall steps.
+                        A text prompt,
+                        and a ChoicePrompt, with a name of “ClubPrompt”.
+                        Also tell it that the InitialDialog is the waterfalldialog.
                     </div>
                     <span class="inline-comment-marker" data-ref="79aa4b97-644f-4888-bd4c-7cae9044300f">You should
                         end up with something that looks like thi</span>s@
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">      public LocationDialog() 
       : base(nameof(LocationDialog))
@@ -59,21 +63,21 @@
          AddDialog(new ChoicePrompt(&quot;ClubPrompt&quot;));
          //Make sure we start with the waterfall dialog
          InitialDialogId = nameof(WaterfallDialog);
-      }</pre>
+      }</code></pre>
                         </div>
                     </div>
                     <h1 id="Bot#2-Flow#2-Settingthelocation-Step2">Step 2</h1>
                     Let’s begin with the ChoicePrompt, this is a bit new.This type of prompt will allow us to present
                     a fixed set of options to the user, that they can click on to choose.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Add out first step - ChooseClubPrompt - and generate the method.
+                        Add out first step - ChooseClubPrompt - and generate the method.
                     </div>
                     Into that method, we’re going to present some choices, a prompt to pick one, and a retry prompt
                     in-case they send back something we don’t understand (e.g. they type a club name we don’t
                     support).
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">  private async Task&lt;DialogTurnResult&gt; ChooseClubStep(WaterfallStepContext stepContext, CancellationToken cancellationToken)
       {
@@ -83,22 +87,22 @@
             Prompt = MessageFactory.Text(&quot;What club are you at?&quot;),
             RetryPrompt = MessageFactory.Text(&quot;Please select one of the clubs I know&quot;)
          });
-      }</pre>
+      }</code></pre>
                         </div>
                     </div>
                     To test the dialog, we need to use it from the main HCRDialogBot class.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            In the constructor, add it to the dialogset, just below the GreetingDialog
+                        In the constructor, add it to the dialogset, just below the GreetingDialog
                     </div>
                     Now, in OnTurnAsync, we want to kick i<span class="inline-comment-marker"
                         data-ref="5078ab2a-f8ac-4e2b-87b6-886d5d60ebea">t off when the GreetingDialog</span> has
                     finished.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Add the snippet like this:
+                        Add the snippet like this:
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">else
                {
@@ -115,16 +119,16 @@
                            break;
                      }                    
                }
-</pre>
+</code></pre>
                         </div>
                     </div>
                     <h1 id="Bot#2-Flow#2-Settingthelocation-Step3">Step 3</h1>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Add a a new class to capture the results of this dialog.
+                        Add a a new class to capture the results of this dialog.
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">   public class LocationResult
    {
@@ -134,25 +138,24 @@
       public string Row { get; set; }
       public int Seat { get; set; }
       public int ReporterSeat { get; set; }
-   }</pre>
+   }</code></pre>
                         </div>
                     </div>
                     <p>Now let’s start capturing that information.</p> <span
                         class="confluence-embedded-file-wrapper image-center-wrapper"><img
-                            src="attachments/1031340065/1036222528.png"
-                        ></span>
+                            src="attachments/1031340065/1036222528.png"></span>
                     <p></p>We are going to ask lots of Yes or No questions, and capture a few text answers, and a few
                     numeric answers.
                     To do so we need to add a few more Prompt types.</p>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            In the LocationDialog class constructor, use the AddDialog method to register a new
-                            ConfirmPrompt, called “YesNoPrompt”, and a number prompt for a type of integer, called
-                            “NumPrompt”.
+                        In the LocationDialog class constructor, use the AddDialog method to register a new
+                        ConfirmPrompt, called “YesNoPrompt”, and a number prompt for a type of integer, called
+                        “NumPrompt”.
                     </div>
                     Our constructor should contain the following:
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
                                 data-theme="Confluence">         //Register the waterfall dialog. 
          AddDialog(new WaterfallDialog(nameof(WaterfallDialog), waterfallSteps));
@@ -163,7 +166,7 @@
          //register a confirm prompt, for yes/no questions
          AddDialog(new ConfirmPrompt(&quot;YesNoPrompt&quot;));
          //register a number prompt, for grabbing integers
-         AddDialog(new NumberPrompt&lt;int&gt;(&quot;NumPrompt&quot;));         </pre>
+         AddDialog(new NumberPrompt&lt;int&gt;(&quot;NumPrompt&quot;));         </code></pre>
                         </div>
                     </div>
                     <h1 id="Bot#2-Flow#2-Settingthelocation-Step4">Step 4</h1>
@@ -172,33 +175,33 @@
                     GreetingDialog:
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4a">4a</h2>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            <span class="inline-comment-marker" data-ref="2f4427a9-8fb4-4d29-8bed-2dc7e5022a8d">Send
-                                the next prompt</span>, from a step called NameStandStep.
-                            This prompt should store the result of preceeding step in the Context’s Values
-                            dictionary, you can get this from the stepContext’s results property using a cast to
-                            FoundChoice:
-                            <code>((FoundChoice)stepContext.Result).Value</code>
-                            This is should make use of the TextPrompt. Send the question from the flow diagram above.
+                        <span class="inline-comment-marker" data-ref="2f4427a9-8fb4-4d29-8bed-2dc7e5022a8d">Send
+                            the next prompt</span>, from a step called NameStandStep.
+                        This prompt should store the result of preceeding step in the Context’s Values
+                        dictionary, you can get this from the stepContext’s results property using a cast to
+                        FoundChoice:
+                        <code>((FoundChoice)stepContext.Result).Value</code>
+                        This is should make use of the TextPrompt. Send the question from the flow diagram above.
 
                     </div>
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4b">4b</h2>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Add a step called ChooseZoneStep
-                            It should store the Stand name.
-                            Then send the ‘YesNoPrompt’ with text - “Do you know which zone”.
-                            Include a retry with ‘please provide a Yes or No answer’.
+                        Add a step called ChooseZoneStep
+                        It should store the Stand name.
+                        Then send the ‘YesNoPrompt’ with text - “Do you know which zone”.
+                        Include a retry with ‘please provide a Yes or No answer’.
                     </div>
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4c">4c</h2>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Add another step called NameZoneStep.
-                            It should first get the result from the prceeding step. Cast to boolean using the ‘bool’
-                            keyword. You can then use it in a conditional staetment:
-                            if the result is true, send the next text prompt - “Which Zone?”
-                            if the result is false, call a method ‘FinishAsync', e..g:
+                        Add another step called NameZoneStep.
+                        It should first get the result from the prceeding step. Cast to boolean using the ‘bool’
+                        keyword. You can then use it in a conditional staetment:
+                        if the result is true, send the next text prompt - “Which Zone?”
+                        if the result is false, call a method ‘FinishAsync', e..g:
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">         var result = (bool)stepContext.Result;
          if (result)
@@ -208,35 +211,35 @@
          else
          {
             return FinishAsync(stepContext, cancellationToken);
-         }</pre>
+         }</code></pre>
                         </div>
                     </div>
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4d">4d</h2>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            OK, build up the remaining steps to complete the flow, remember to send the ‘YesNoPrompt’
-                            first, then either a Text Prompt or a NumPrompt. Make sure you store the text or number
-                            values in the stepcontext’s Values dictionary.
+                        OK, build up the remaining steps to complete the flow, remember to send the ‘YesNoPrompt’
+                        first, then either a Text Prompt or a NumPrompt. Make sure you store the text or number
+                        values in the stepcontext’s Values dictionary.
                     </div>
                     <div class="alert alert-info" role="alert">
                         <i class="fa fa-info"></i>
-                            To get the row - send a Text Prompt.
-                            To get the seat - send a NumPrompt -cast the result to an int.
-                            For the reporter’s seat, send a NumPrompt - cast the result to an int.
+                        To get the row - send a Text Prompt.
+                        To get the seat - send a NumPrompt -cast the result to an int.
+                        For the reporter’s seat, send a NumPrompt - cast the result to an int.
                     </div>
                     <h2 id="Bot#2-Flow#2-Settingthelocation-4e">4e</h2>
                     After the final question (to get the Reporter’s seat)..
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Add a step to capture it, and move immediately on to the FinishAsync:
+                        Add a step to capture it, and move immediately on to the FinishAsync:
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">      private async Task&lt;DialogTurnResult&gt; CaptureReporterSeatStep(WaterfallStepContext stepContext, CancellationToken cancellationToken)
       {
          stepContext.Values[&quot;ReporterSeat&quot;] = (int)stepContext.Result;
          return await FinishAsync(stepContext, cancellationToken);
-      }</pre>
+      }</code></pre>
                         </div>
                     </div>
                     <h2 id="Bot#2-Flow#2-Settingthelocation-Step5">Step 5</h2>
@@ -244,7 +247,7 @@
                         FinishAsync to your waterfall steps to complete the dialog</span>:
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence"> private async Task&lt;DialogTurnResult&gt; FinishAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
       {
@@ -257,29 +260,29 @@
             ReporterSeat = stepContext.Values.ContainsKey(&quot;ReporterSeat&quot;) ? (int)stepContext.Values[&quot;ReporterSeat&quot;] : 0,
          },
           cancellationToken);
-      }</pre>
+      }</code></pre>
                         </div>
                     </div>
                     <div class="alert alert-info" role="alert">
                         <i class="fa fa-info"></i>
-                            This block uses something known as the ‘ternary’ operator, it is in the convention of:
-                            <em>boolean condition ? if true : else, false.</em>
-                            It is typically used as above, to do a quick check inline to choose a value.
-                            You can read more on it in the Microsoft documentation here: <a
-                                href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator"
-                                class="external-link"
-                                rel="nofollow">https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator</a>
+                        This block uses something known as the ‘ternary’ operator, it is in the convention of:
+                        <em>boolean condition ? if true : else, false.</em>
+                        It is typically used as above, to do a quick check inline to choose a value.
+                        You can read more on it in the Microsoft documentation here: <a
+                            href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator"
+                            class="external-link"
+                            rel="nofollow">https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator</a>
 
                     </div>
                     <h1 id="Bot#2-Flow#2-Settingthelocation-Step6">Step 6</h1>
                     Finally, we’re going to say thank you, and prepare to capture the next dialog.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Back in the HCRDialog class, in the OnTurnAsync, extend the method to handle the
-                            completion of this dialog as below:
+                        Back in the HCRDialog class, in the OnTurnAsync, extend the method to handle the
+                        completion of this dialog as below:
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence"> if (continueResult.Status == DialogTurnStatus.Complete)
                   {
@@ -296,25 +299,27 @@
                            await turnContext.SendActivityAsync(MessageFactory.Text(&quot;Thanks, I now have all the location details stored. Let’s move onto description of the offenders.&quot;), cancellationToken);
                            break;
                      }
-                  }</pre>
+                  }</code></pre>
                         </div>
                     </div>
                     <p />
                     <div class="alert alert-success" role="alert"><i class="fa fa-check"></i>
-                            Good job, you should now have a working chatbot, with two Dialogs. Give it a test, and
-                            commit your changes.
-                            You should now have a good grasp of how to build up a bot using dialogs. Make sure you
-                            understand what as going on in each step, and when you’re ready, move on to next stage
-                            of the tutorial.
+                        Good job, you should now have a working chatbot, with two Dialogs. Give it a test, and
+                        commit your changes.
+                        You should now have a good grasp of how to build up a bot using dialogs. Make sure you
+                        understand what as going on in each step, and when you’re ready, move on to next stage
+                        of the tutorial.
                     </div>
                 </div>
             </div>
         </div>
-        <div id="footer" role="contentinfo">
+        <footer class="blockquote-footer">
             <section class="footer-body">
                 Copyright Principle One Ltd 2020
             </section>
-        </div>
+        </footer>
     </div>
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
+
 </html>

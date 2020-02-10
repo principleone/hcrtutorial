@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>HCR Bot Tutorial : Bot #1 - Flow #1 - Reporting the Basic Crime information to a simple echo bot
     </title>
-    <link rel="stylesheet" href="styles/site.css" type="text/css" />
-    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/afd53ae465.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/afd53ae465.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
+
 <body class="container">
     <div id="page">
         <div id="main" class="aui-page-panel">
@@ -58,59 +60,59 @@
                             </ul>
                         </li>
                         <li>
-                            You have completed <a href="Environment-Settings.html"
-                                    data-linked-resource-id="1009975297" data-linked-resource-version="7"
-                                    data-linked-resource-type="page">Environment Settings</a> .
+                            You have completed <a href="Environment-Settings.html" data-linked-resource-id="1009975297"
+                                data-linked-resource-version="7" data-linked-resource-type="page">Environment
+                                Settings</a> .
                         </li>
                     </ul>
                     <h1
                         id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Step1-ScaffoldaBot/Hello,World!">
                         <strong>Step 1 - Scaffold a Bot / Hello, World!</strong></h1>
                     Before we start, the Bot runs on a framework, and frameworks are usually complex. There are a lot
-                        of bits that make this work, but don't worry if they don't make sense to you, we will just
-                        lightly touch on them, then focus on the bits we care about, if you have any questions do ask.
+                    of bits that make this work, but don't worry if they don't make sense to you, we will just
+                    lightly touch on them, then focus on the bits we care about, if you have any questions do ask.
                     <span class="inline-comment-marker" data-ref="892ede0d-f060-4aed-a3bf-2f03e7da2561">In visual
-                            studio create your new folder and workspace and initialise a chatbot project:</span>
+                        studio create your new folder and workspace and initialise a chatbot project:</span>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            In the VS Code terminal type
+                        In the VS Code terminal type
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence"
                                 data-theme="Confluence">dotnet new -i Microsoft.Bot.Framework.CSharp.EmptyBot
-dotnet new emptybot</pre>
+dotnet new emptybot</code></pre>
                         </div>
                     </div>
                     This scaffolds the basic chatbot framework, i.e. It creates all the boilerplate bits we don't
-                        want to. It does quite as lot.
+                    want to. It does quite as lot.
                     <p />
                     <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Bonusstuff">Bonus stuff</h2>
                     We are concerned with EmptyBot.cs today.
                     If you are interested, here's a brief summary of what you're seeing now:
                     <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Program.cs">Program.cs </h2>
                     This the entry point for the application. It contains a public static void main (the typical
-                        point to any application in C#, or Java). When you run the application, this is the first thing
-                        that will be called.
+                    point to any application in C#, or Java). When you run the application, this is the first thing
+                    that will be called.
                     You will see that this uses the Startup.cs class to build the application. The chatbot is hosted
-                        as an Http Web Service when you start it up, hence the bit in Program.:
+                    as an Http Web Service when you start it up, hence the bit in Program.:
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">WebHost.CreateDefaultBuilder(args)
-                .UseStartup&lt;Startup&gt;(); </pre>
+                .UseStartup&lt;Startup&gt;(); </code></pre>
                         </div>
                     </div>
                     The BotFramework is actually running on top of a framework called <a href="http://ASP.Net"
-                            class="external-link" rel="nofollow">ASP.Net</a> MVC, which is the .Net framework for web
-                        application development.
+                        class="external-link" rel="nofollow">ASP.Net</a> MVC, which is the .Net framework for web
+                    application development.
                     <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Startup.cs">Startup.cs</h2>
                     The MVC framework uses a technique called dependency injection to 'wire up' classes at runtime,
-                        if you're not familiar with dependency injection or DI, do not worry too much at this point, but
-                        you can think of it as a special kind of factory - you tell it what classes you will need to
-                        build your program and when you ask for a class, it will try to build that classes and it's
-                        dependencies. These classes are known as services.
+                    if you're not familiar with dependency injection or DI, do not worry too much at this point, but
+                    you can think of it as a special kind of factory - you tell it what classes you will need to
+                    build your program and when you ask for a class, it will try to build that classes and it's
+                    dependencies. These classes are known as services.
                     What we are seeing here is the registration of 3 important services:
                     <ol>
                         <li>
@@ -118,98 +120,98 @@ dotnet new emptybot</pre>
                         </li>
                         <li>
                             The Bot Framework HTTP Adapter  - this makes sure that our web app can talk 'chatbot', in
-                                the same protocol that the bot emulator does.
+                            the same protocol that the bot emulator does.
                         </li>
                         <li>
                             EmptyBot - this is the most important service. This is our chatbot.
                         </li>
                     </ol>
                     The contents of the Configure method are used to configure the further application settings. We
-                        won't worry about these for now.
+                    won't worry about these for now.
                     <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-EmptyBot.cs">EmptyBot.cs</h2>
                     This is where the chatty magic happens; this is where we're going to focus our time today.
-                        Currently what this code is doing, is saying 'Hello, World!' to any new members who join the
-                        bot's conversation
+                    Currently what this code is doing, is saying 'Hello, World!' to any new members who join the
+                    bot's conversation
                     <h2
                         id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Controllers/BotController.cs">
                         Controllers/BotController.cs</h2>
                     This file is a Controller. Controllers are an important part of MVC (infact the C is for
-                        Controller); we won't worry about the other bits of MVC today. We only need to worry about the
-                        Bot class.
+                    Controller); we won't worry about the other bits of MVC today. We only need to worry about the
+                    Bot class.
                     What this class does is define what happens you navigate to a particular resource - the bit on
-                        the end of your URL (or web address).
+                    the end of your URL (or web address).
                     This particular resource is 'api/messages', that means when you run the bot, and access that
-                        resource, it will use the BotAdapter class (that was wired up in Startup.cs), to process the
-                        request, response, and your new chatbot (bot).
+                    resource, it will use the BotAdapter class (that was wired up in Startup.cs), to process the
+                    request, response, and your new chatbot (bot).
                     <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-endbonusstuff">end bonus
                         stuff</h2>
-                    Start it up! 
+                    Start it up!
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            In the terminal type and run
+                        In the terminal type and run
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
-                                data-theme="Confluence">dotnet run</pre>
+                                data-theme="Confluence">dotnet run</code></pre>
                         </div>
                     </div>
                     <div class="alert alert-success" role="alert"><i class="fa fa-check"></i>
-                            In short, what we have done, is made a chatbot that runs at: <a
-                                    href="http://localhost:3978/api/messages" class="external-link"
-                                    rel="nofollow">http://localhost:3978/api/messages</a>
+                        In short, what we have done, is made a chatbot that runs at: <a
+                            href="http://localhost:3978/api/messages" class="external-link"
+                            rel="nofollow">http://localhost:3978/api/messages</a>
                     </div>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            If you point your Bot Framework Emulator at that address, you will find your Bot says
-                                Hello, World!
-                            That’s all it does for now. Let’s shutdown the app. In the terminal, use Ctrl + C (or Cmd
-                                + C) to stop the programme. 
+                        If you point your Bot Framework Emulator at that address, you will find your Bot says
+                        Hello, World!
+                        That’s all it does for now. Let’s shutdown the app. In the terminal, use Ctrl + C (or Cmd
+                        + C) to stop the programme.
                     </div>
                     This is a good point to backup our work using git.
                     <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Setupthegitrepository">Setup
                         the git repository</h2>
                     Now we need to create a git repository (and tell it to ignore all the binary files).
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            In the terminal type and run:
+                        In the terminal type and run:
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence"
                                 data-theme="Confluence">git init 
-touch .gitignore</pre>
+touch .gitignore</code></pre>
                         </div>
                     </div>
                     This has created an empty file, it will tell git to ignore files (e.g. binaries and personal VS
-                        Code settings), if we tell it what we want it to ignore. 
+                    Code settings), if we tell it what we want it to ignore.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Navigate to: <a
-                                    href="https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore"
-                                    class="external-link"
-                                    rel="nofollow">https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore</a>
-                                and copy the contents into the new .gitignore file (make sure you save it).
+                        Navigate to: <a
+                            href="https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore"
+                            class="external-link"
+                            rel="nofollow">https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore</a>
+                        and copy the contents into the new .gitignore file (make sure you save it).
                     </div>
-                    Now we need to put the files we do want into source control. 
+                    Now we need to put the files we do want into source control.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            <span class="inline-comment-marker" data-ref="a2eb511b-548a-4e94-85fc-fedced60ce97">In
-                                    the terminal type and run:</span>
+                        <span class="inline-comment-marker" data-ref="a2eb511b-548a-4e94-85fc-fedced60ce97">In
+                            the terminal type and run:</span>
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence"
                                 data-theme="Confluence">git add -A
-git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</pre>
+git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</code></pre>
                         </div>
                     </div>
                     Phew! that's the tricky bit done, if you've encountered any issues up to this point, don't worry,
-                        this happens. This is a phenomenon sometimes known as yak shaving.  (you can Google this, or see
-                        another example) <a href="https://xkcd.com/349/" class="external-link"
-                            rel="nofollow">https://xkcd.com/349/</a>
+                    this happens. This is a phenomenon sometimes known as yak shaving.  (you can Google this, or see
+                    another example) <a href="https://xkcd.com/349/" class="external-link"
+                        rel="nofollow">https://xkcd.com/349/</a>
                     <h1 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Step2"><strong>Step
                             2</strong></h1>
                     We now have a working chatbot, but it's not doing much yet. Let's make it do something a bit more
-                        interesting.
+                    interesting.
                     Our BA's have given us this specification:<span
                         class="confluence-embedded-file-wrapper image-center-wrapper"><img
                             src="attachments/1009975304/1010073614.png"></span>
@@ -217,87 +219,88 @@ git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</pre>
                         Changing the greeting. </h2>
                     Change the welcome message:
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            In EmptyBot.cs, change <em>&quot;Hello, World&quot;</em> to:
-                            <em>&quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what
-                                    happened, and I will let the <span class="inline-comment-marker"
-                                        data-ref="2c182147-88aa-43d9-96ca-d68cdd2b826c">club know</span> so they can
-                                    take action.&quot;</em>
+                        In EmptyBot.cs, change <em>&quot;Hello, World&quot;</em> to:
+                        <em>&quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what
+                            happened, and I will let the <span class="inline-comment-marker"
+                                data-ref="2c182147-88aa-43d9-96ca-d68cdd2b826c">club know</span> so they can
+                            take action.&quot;</em>
                     </div>
                     You can run that, test it works, and commit (don't forget to add the change first).
                     Next, we need to capture some input from the user. We will need to ask them a question first -
-                        that question is &quot;What type of hate crime are you reporting?&quot;.
+                    that question is &quot;What type of hate crime are you reporting?&quot;.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                             So, store that message in a string constant at the top of the class:
+                        So, store that message in a string constant at the top of the class:
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
-                                data-theme="Confluence">public const string WhatMessage = &quot;What type of hate crime are you reporting?&quot;;</pre>
+                                data-theme="Confluence">public const string WhatMessage = &quot;What type of hate crime are you reporting?&quot;;</code></pre>
                         </div>
                     </div>
                     Next, we need to send that message to the user, immediately after the greeting message.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            We can simply copy and paste the greeting message, and change the in-line string be our new constant:
+                        We can simply copy and paste the greeting message, and change the in-line string be our new
+                        constant:
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">await turnContext.SendActivityAsync(MessageFactory.Text($&quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what happened, and I will let the club know so they can take action!&quot;), cancellationToken);
-await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellationToken: cancellationToken);               </pre>
+await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellationToken: cancellationToken);               </code></pre>
                         </div>
                     </div>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            <span class="inline-comment-marker" data-ref="3459ca30-d539-4f23-bc7e-d5a0ba35e900">Run
-                                    it, and test. If it works, commit again if you like.</span>
+                        <span class="inline-comment-marker" data-ref="3459ca30-d539-4f23-bc7e-d5a0ba35e900">Run
+                            it, and test. If it works, commit again if you like.</span>
                     </div>
                     You will see your message now comes through, but if you try responding, your Bot won't respond
-                        back.<br />Now we know how to send greeting messages to the user. Next we need to interact with
-                        them.
+                    back.<br />Now we know how to send greeting messages to the user. Next we need to interact with
+                    them.
                     <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-2b.Handletheuser’sresponse">
                         <strong>2b. Handle the user’s response</strong></h2>
                     What we need to do is handle their 'activities'.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Add a new method to the EmptyBot class. 
+                        Add a new method to the EmptyBot class.
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
                                 data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
 {
-} </pre>
+} </code></pre>
                         </div>
                     </div>
                     This will handle anything the user sends back to us, we will want to capture their feedback and
-                        store it for use later on.
+                    store it for use later on.
                     Our user is going to send some text at this point, we can get that from their latest activity:
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
 {
 var text = turnContext.Activity.Text.ToLowerInvariant();
-} </pre>
+} </code></pre>
                         </div>
                     </div>
                     To test this, we can then replay it back to them:
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
 {
   var text = turnContext.Activity.Text.ToLowerInvariant();
   await turnContext.SendActivityAsync($&quot;You want to report {text}.&quot;, cancellationToken: cancellationToken);
-} </pre>
+} </code></pre>
                         </div>
                     </div>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Run the bot, test it, then stop the bot (Ctrl + C in Windows or CMD + C in MacOS) and
-                                commit your changes.
+                        Run the bot, test it, then stop the bot (Ctrl + C in Windows or CMD + C in MacOS) and
+                        commit your changes.
                     </div>
                     <h1 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Step3"><strong>Step
                             3</strong></h1>
@@ -309,62 +312,62 @@ var text = turnContext.Activity.Text.ToLowerInvariant();
                         </li>
                         <li>
                             Make the bot understand where we are in the conversation flow, so we can ask different
-                                questions.
+                            questions.
                         </li>
                     </ol>
                     To store the crime, we need to maintain the state of the conversation.
                     The bot framework gives us a mechanism to do that, the UserState class, this needs a storage
-                        mechanism to hold that state in, computer memory will do us for now. 
+                    mechanism to hold that state in, computer memory will do us for now.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Let’s register those classes in the Startup.cs ConfigureServices method.
+                        Let’s register those classes in the Startup.cs ConfigureServices method.
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
                                 data-theme="Confluence">// Create the storage we&#39;ll be using for User and Conversation state. (Memory is great for testing purposes.)
 services.AddSingleton&lt;IStorage, MemoryStorage&gt;();
 // Create the User state.
-services.AddSingleton&lt;UserState&gt;();</pre>
+services.AddSingleton&lt;UserState&gt;();</code></pre>
                         </div>
                     </div>
                     Now to actually make us of this we need to make sure the EmptyBot Class is constructed with a
-                        UserState object, and that the object is stored in a member-level variable.
+                    UserState object, and that the object is stored in a member-level variable.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Add the new field and a constructor:
+                        Add the new field and a constructor:
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
                                 data-theme="Confluence">private readonly UserState userState;
 public EmptyBot(UserState userState)
 {
   this.userState = userState;
-}</pre>
+}</code></pre>
                         </div>
                     </div>
                     We also need to create a new class we can store properties in (the first property is CrimeName): 
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Add a new class ReportingStateProperties
+                        Add a new class ReportingStateProperties
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">public class ReportingStateProperties
 {
    public string CrimeName {get; set; }  
-}</pre>
+}</code></pre>
                         </div>
                     </div>
                     We can then use those two objects together to store the state of the conversation.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                             Modify the OnMessageActivityAsync method to look like this:
+                         Modify the OnMessageActivityAsync method to look like this:
                     </div>
                     <div class="code panel pdl" style="border-width: 1px;">
                         <div class="codeContent panelContent pdl">
-                            <pre class="syntaxhighlighter-pre"
+                            <pre><code class="syntaxhighlighter-pre"
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
                                 data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
 {
@@ -377,7 +380,7 @@ public EmptyBot(UserState userState)
     await turnContext.SendActivityAsync($&quot;You want to report {text}.&quot;, cancellationToken: cancellationToken);
   }
   await userState.SaveChangesAsync(turnContext, cancellationToken: cancellationToken);
-}</pre>
+}</code></pre>
                         </div>
                     </div>
                     The bot will only ask you to report a crime once now. Give it a test, then commit.
@@ -388,28 +391,30 @@ public EmptyBot(UserState userState)
                     <ul>
                         <li>
                              Add new properties to the ReportingStateProperties class to hold more information as you
-                                collect it.
+                            collect it.
                         </li>
                         <li>
                             Add more conditional (if) statements in before the SaveChangesAsync(), to ask questions
-                                if you don’t already have them. 
+                            if you don’t already have them.
                         </li>
                         <li>
                             Don’t ask all the questions in one go! Think about how you can stop the bot from asking
-                                all questions in one go (count the steps through using the state properties). 
+                            all questions in one go (count the steps through using the state properties).
                         </li>
                     </ul>
-                  <h1><strong>Step 5. A challenge</strong></h1>
+                      <h1><strong>Step 5. A challenge</strong></h1>
                     How can you restart the user's conversation if they type 'restart'.?
                 </div>
 
             </div>
         </div>
-        <div id="footer" role="contentinfo">
+        <footer class="blockquote-footer">
             <section class="footer-body">
-                Copyright Principle One Ltd 2020              
+                Copyright Principle One Ltd 2020
             </section>
-        </div>
+        </footer>
     </div>
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
+
 </html>
