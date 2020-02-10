@@ -12,9 +12,9 @@
 </head>
 
 <body class="container">
-    <div id="page">
-        <div id="main" class="aui-page-panel">
-            <div id="main-header">
+    <div >
+        <div >
+            <div >
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
@@ -26,15 +26,15 @@
                         </li>
                     </ol>
                 </nav>
-                <h1 id="title-heading" class="pagetitle">
-                    <span id="title-text">
+                <br><h1 >
+                    <span >
                         HCR Bot Tutorial : Bot #2 - Flow #1 - Reporting basic crime information to a Dialog Bot
                     </span>
                 </h1>
             </div>
-            <div id="content" class="view">
-                <div id="main-content" class="wiki-content group">
-                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step1">Step 1</h1>
+            <div >
+                <div >
+                    <br><h1 >Step 1</h1>
                     We are going to start a clean bot for this, it’s a bit easier than refactoring the old one.
                     First create a new VS Code project.
                     <p />
@@ -67,7 +67,7 @@ dotnet add package microsoft.bot.builder.dialogs
 git add -A</code></pre>
                         </div>
                     </div>
-                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step2.">Step 2.</h1>
+                    <br><h1 >Step 2.</h1>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <span class="inline-comment-marker" data-ref="52fd4a8c-735b-49a8-8226-63f758503e56">Rename the
                             EmptyBot class</span> to
@@ -245,7 +245,7 @@ namespace HCRDialogs
                                 data-theme="Confluence">using Microsoft.Bot.Builder;</code></pre>
                         </div>
                     </div>
-                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step3.">Step 3.</h1>
+                    <br><h1 >Step 3.</h1>
                     Now, before it will run our dialog, we just need to make sure it’s actually launched.
                     In our HCRDialogBot class, we now need to make a couple of changes.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
@@ -330,7 +330,7 @@ services.AddTransient&lt;IBot, HCRDialogBot&gt;();</code></pre>
                             running the bot (you will have to say hello to it before it messages you), if it
                             works, commit your changes!</span>
                     </div>
-                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step4-extendingthedialog.">Step 4 -
+                    <br><h1 >Step 4 -
                         extending the dialog. </h1>
                     This step should be a bit simpler.
                     We begin by adding the next step as as a method inside our GreetingDialog constructor.
@@ -366,7 +366,7 @@ services.AddTransient&lt;IBot, HCRDialogBot&gt;();</code></pre>
                         </div>
                     </div>
                     <p />
-                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step5-overtoyou">Step 5 - over to
+                    <br><h1 >Step 5 - over to
                         you</h1>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         Now add in a step to store the crime time, and to prompt for the bad behaviour.
@@ -375,7 +375,7 @@ services.AddTransient&lt;IBot, HCRDialogBot&gt;();</code></pre>
                         class="confluence-embedded-file-wrapper image-center-wrapper"><img
                             src="attachments/1030782977/1031077900.png"></span>
                     <p />
-                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step6.">Step 6. </h1>
+                    <br><h1 >Step 6. </h1>
                     Cool, we now need to end the dialog, and return the information we’ve requested.
                     First, we want to package the information up and return it to the user.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
@@ -480,7 +480,7 @@ public const string ThankYou = &quot;Thank you, I have stored all that
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         OK, try running it, and make sure to commit your changes if it works!
                     </div>
-                    <h1 id="Bot#2-Flow#1-ReportingbasiccrimeinformationtoaDialogBot-Step7-Achallenge">Step 7 - A
+                    <br><h1 >Step 7 - A
                         challenge</h1>
                     How would you get this Bot to restart if the user types ‘restart’?
                 </div>

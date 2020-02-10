@@ -12,9 +12,9 @@
 </head>
 
 <body class="container">
-    <div id="page">
-        <div id="main" class="aui-page-panel">
-            <div id="main-header">
+    <div >
+        <div >
+            <div >
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
@@ -26,15 +26,15 @@
                         </li>
                     </ol>
                 </nav>
-                <h1 id="title-heading" class="pagetitle">
-                    <span id="title-text">
+                <br><h1 >
+                    <span >
                         HCR Bot Tutorial : Bot #2 - Flow #2 - Setting the location
                     </span>
                 </h1>
             </div>
-            <div id="content" class="view">
-                <div id="main-content" class="wiki-content group">
-                    <h1 id="Bot#2-Flow#2-Settingthelocation-Step1">Step 1</h1>
+            <div >
+                <div >
+                    <br><h1 >Step 1</h1>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         Begin by adding a new class, LocationDialog, it should inherit from ComponentDialog. Add:
                         The WaterfallDialog class, with empty waterfall steps.
@@ -64,7 +64,7 @@
       }</code></pre>
                         </div>
                     </div>
-                    <h1 id="Bot#2-Flow#2-Settingthelocation-Step2">Step 2</h1>
+                    <br><h1 >Step 2</h1>
                     Let’s begin with the ChoicePrompt, this is a bit new.This type of prompt will allow us to present
                     a fixed set of options to the user, that they can click on to choose.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
@@ -120,7 +120,7 @@
 </code></pre>
                         </div>
                     </div>
-                    <h1 id="Bot#2-Flow#2-Settingthelocation-Step3">Step 3</h1>
+                    <br><h1 >Step 3</h1>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         Add a a new class to capture the results of this dialog.
                     </div>
@@ -167,11 +167,11 @@
          AddDialog(new NumberPrompt&lt;int&gt;(&quot;NumPrompt&quot;));         </code></pre>
                         </div>
                     </div>
-                    <h1 id="Bot#2-Flow#2-Settingthelocation-Step4">Step 4</h1>
+                    <br><h1 >Step 4</h1>
                     Over to you. Based on what you lea<span class="inline-comment-marker"
                         data-ref="1d3993b7-0f21-4b1b-bb05-471e8a2f3cdb">rned from building th</span>e
                     GreetingDialog:
-                    <h2 id="Bot#2-Flow#2-Settingthelocation-4a">4a</h2>
+                    <br><h2 >4a</h2>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         <span class="inline-comment-marker" data-ref="2f4427a9-8fb4-4d29-8bed-2dc7e5022a8d">Send
                             the next prompt</span>, from a step called NameStandStep.
@@ -181,14 +181,14 @@
                         <code>((FoundChoice)stepContext.Result).Value</code>
                         This is should make use of the TextPrompt. Send the question from the flow diagram above.
                     </div>
-                    <h2 id="Bot#2-Flow#2-Settingthelocation-4b">4b</h2>
+                    <br><h2 >4b</h2>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         Add a step called ChooseZoneStep
                         It should store the Stand name.
                         Then send the ‘YesNoPrompt’ with text - “Do you know which zone”.
                         Include a retry with ‘please provide a Yes or No answer’.
                     </div>
-                    <h2 id="Bot#2-Flow#2-Settingthelocation-4c">4c</h2>
+                    <br><h2 >4c</h2>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         Add another step called NameZoneStep.
                         It should first get the result from the prceeding step. Cast to boolean using the ‘bool’
@@ -211,7 +211,7 @@
          }</code></pre>
                         </div>
                     </div>
-                    <h2 id="Bot#2-Flow#2-Settingthelocation-4d">4d</h2>
+                    <br><h2 >4d</h2>
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         OK, build up the remaining steps to complete the flow, remember to send the ‘YesNoPrompt’
                         first, then either a Text Prompt or a NumPrompt. Make sure you store the text or number
@@ -223,7 +223,7 @@
                         To get the seat - send a NumPrompt -cast the result to an int.
                         For the reporter’s seat, send a NumPrompt - cast the result to an int.
                     </div>
-                    <h2 id="Bot#2-Flow#2-Settingthelocation-4e">4e</h2>
+                    <br><h2 >4e</h2>
                     After the final question (to get the Reporter’s seat)..
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         Add a step to capture it, and move immediately on to the FinishAsync:
@@ -239,7 +239,7 @@
       }</code></pre>
                         </div>
                     </div>
-                    <h2 id="Bot#2-Flow#2-Settingthelocation-Step5">Step 5</h2>
+                    <br><h2 >Step 5</h2>
                     <span class="inline-comment-marker" data-ref="c20742fd-f829-483e-beb1-1033bb598709">Add the
                         FinishAsync to your waterfall steps to complete the dialog</span>:
                     <div class="code panel pdl" style="border-width: 1px;">
@@ -270,7 +270,7 @@
                             class="external-link"
                             rel="nofollow">https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator</a>
                     </div>
-                    <h1 id="Bot#2-Flow#2-Settingthelocation-Step6">Step 6</h1>
+                    <br><h1 >Step 6</h1>
                     Finally, we’re going to say thank you, and prepare to capture the next dialog.
                     <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
                         Back in the HCRDialog class, in the OnTurnAsync, extend the method to handle the

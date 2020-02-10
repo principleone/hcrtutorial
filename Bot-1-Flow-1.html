@@ -13,9 +13,9 @@
 </head>
 
 <body class="container">
-    <div id="page">
-        <div id="main" class="aui-page-panel">
-            <div id="main-header">
+    <div >
+        <div >
+            <div >
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
@@ -27,16 +27,16 @@
                         </li>
                     </ol>
             </div>
-            <h1 id="title-heading" class="pagetitle">
-                <span id="title-text">
+            <br><h1 >
+                <span >
                     HCR Bot Tutorial : Bot #1 - Flow #1 - Reporting the Basic Crime information to a simple
                     echo bot
                 </span>
             </h1>
         </div>
-        <div id="content" class="view">
-            <div id="main-content" class="wiki-content group">
-                <h1 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Prerequisities:">
+        <div >
+            <div >
+                <br><h1 >
                     Prerequisities:</h1>
                 <ul>
                     <li>
@@ -60,12 +60,12 @@
                         </ul>
                     </li>
                     <li>
-                        You have completed <a href="Environment-Settings.html" data-linked-resource-id="1009975297"
+                        You have completed <a href="Environment-Settings.html" data-linked-resource-
                             data-linked-resource-version="7" data-linked-resource-type="page">Environment
                             Settings</a> .
                     </li>
                 </ul>
-                <h1 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Step1-ScaffoldaBot/Hello,World!">
+                <br><h1 >
                     <strong>Step 1 - Scaffold a Bot / Hello, World!</strong></h1>
                 Before we start, the Bot runs on a framework, and frameworks are usually complex. There are a lot
                 of bits that make this work, but don't worry if they don't make sense to you, we will just
@@ -87,10 +87,10 @@ dotnet new emptybot</code></pre>
                 want to. It does quite as lot.
                 <p />
                 <div class="alert alert-info">
-                <h1 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Bonusstuff">Bonus stuff</h1>
+                <br><h1 >Bonus stuff</h1>
                 We are concerned with EmptyBot.cs today.
                 If you are interested, here's a brief summary of what you're seeing now:
-                <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Program.cs">Program.cs </h2>
+                <br><h2 >Program.cs </h2>
                 This the entry point for the application. It contains a public static void main (the typical
                 point to any application in C#, or Java). When you run the application, this is the first thing
                 that will be called.
@@ -98,16 +98,14 @@ dotnet new emptybot</code></pre>
                 as an Http Web Service when you start it up, hence the bit in Program.:
                 <div class="code panel pdl" style="border-width: 1px;">
                     <div class="codeContent panelContent pdl">
-                        <pre><code class="csharp
-                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
-                                data-theme="Confluence">WebHost.CreateDefaultBuilder(args)
+                        <pre><code class="csharp">WebHost.CreateDefaultBuilder(args)
                 .UseStartup&lt;Startup&gt;(); </code></pre>
                     </div>
                 </div>
                 The BotFramework is actually running on top of a framework called <a href="http://ASP.Net"
                     class="external-link" rel="nofollow">ASP.Net</a> MVC, which is the .Net framework for web
                 application development.
-                <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Startup.cs">Startup.cs</h2>
+                <br><h2 >Startup.cs</h2>
                 The MVC framework uses a technique called dependency injection to 'wire up' classes at runtime,
                 if you're not familiar with dependency injection or DI, do not worry too much at this point, but
                 you can think of it as a special kind of factory - you tell it what classes you will need to
@@ -128,11 +126,11 @@ dotnet new emptybot</code></pre>
                 </ol>
                 The contents of the Configure method are used to configure the further application settings. We
                 won't worry about these for now.
-                <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-EmptyBot.cs">EmptyBot.cs</h2>
+                <br><h2 >EmptyBot.cs</h2>
                 This is where the chatty magic happens; this is where we're going to focus our time today.
                 Currently what this code is doing, is saying 'Hello, World!' to any new members who join the
                 bot's conversation
-                <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Controllers/BotController.cs">
+                <br><h2 >
                     Controllers/BotController.cs</h2>
                 This file is a Controller. Controllers are an important part of MVC (infact the C is for
                 Controller); we won't worry about the other bits of MVC today. We only need to worry about the
@@ -166,7 +164,7 @@ dotnet new emptybot</code></pre>
                     + C) to stop the programme.
                 </div>
                 This is a good point to backup our work using git.
-                <h3 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Setupthegitrepository">Setup
+                <br><h3 >Setup
                     the git repository</h3>
                 Now we need to create a git repository (and tell it to ignore all the binary files).
                 <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
@@ -206,14 +204,14 @@ git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</code></p
                 this happens. This is a phenomenon sometimes known as yak shaving.  (you can Google this, or see
                 another example) <a href="https://xkcd.com/349/" class="external-link"
                     rel="nofollow">https://xkcd.com/349/</a>
-                <h1 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Step2"><strong>Step
+                <br><h1 ><strong>Step
                         2</strong></h1>
                 We now have a working chatbot, but it's not doing much yet. Let's make it do something a bit more
                 interesting.
                 Our BA's have given us this specification:<span
                     class="confluence-embedded-file-wrapper image-center-wrapper"><img
                         src="attachments/1009975304/1010073614.png"></span>
-                <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-2a.Changingthegreeting.">2a.
+                <br><h2 >2a.
                     Changing the greeting. </h2>
                 Change the welcome message:
                 <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
@@ -231,9 +229,7 @@ git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</code></p
                 </div>
                 <div class="code panel pdl" style="border-width: 1px;">
                     <div class="codeContent panelContent pdl">
-                        <pre><code class="csharp
-                                data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
-                                data-theme="Confluence">public const string WhatMessage = &quot;What type of hate crime are you reporting?&quot;;</code></pre>
+                        <pre><code class="csharp">
                     </div>
                 </div>
                 Next, we need to send that message to the user, immediately after the greeting message.
@@ -243,9 +239,7 @@ git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</code></p
                 </div>
                 <div class="code panel pdl" style="border-width: 1px;">
                     <div class="codeContent panelContent pdl">
-                        <pre><code class="csharp
-                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
-                                data-theme="Confluence">await turnContext.SendActivityAsync(MessageFactory.Text($&quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what happened, and I will let the club know so they can take action!&quot;), cancellationToken);
+                        <pre><code class="csharp">await turnContext.SendActivityAsync(MessageFactory.Text($&quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what happened, and I will let the club know so they can take action!&quot;), cancellationToken);
 await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellationToken: cancellationToken);               </code></pre>
                     </div>
                 </div>
@@ -256,7 +250,7 @@ await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellati
                 You will see your message now comes through, but if you try responding, your Bot won't respond
                 back.<br />Now we know how to send greeting messages to the user. Next we need to interact with
                 them.
-                <h2 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-2b.Handletheuser’sresponse">
+                <br><h2 >
                     <strong>2b. Handle the user’s response</strong></h2>
                 What we need to do is handle their 'activities'.
                 <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
@@ -264,9 +258,7 @@ await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellati
                 </div>
                 <div class="code panel pdl" style="border-width: 1px;">
                     <div class="codeContent panelContent pdl">
-                        <pre><code class="csharp
-                                data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
-                                data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
+                        <pre><code class="csharp">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
 {
 } </code></pre>
                     </div>
@@ -276,9 +268,7 @@ await turnContext.SendActivityAsync(MessageFactory.Text(WhatMessage), cancellati
                 Our user is going to send some text at this point, we can get that from their latest activity:
                 <div class="code panel pdl" style="border-width: 1px;">
                     <div class="codeContent panelContent pdl">
-                        <pre><code class="csharp
-                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
-                                data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
+                        <pre><code class="csharp">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
 {
 var text = turnContext.Activity.Text.ToLowerInvariant();
 } </code></pre>
@@ -287,9 +277,7 @@ var text = turnContext.Activity.Text.ToLowerInvariant();
                 To test this, we can then replay it back to them:
                 <div class="code panel pdl" style="border-width: 1px;">
                     <div class="codeContent panelContent pdl">
-                        <pre><code class="csharp
-                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
-                                data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
+                        <pre><code class="csharp">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
 {
   var text = turnContext.Activity.Text.ToLowerInvariant();
   await turnContext.SendActivityAsync($&quot;You want to report {text}.&quot;, cancellationToken: cancellationToken);
@@ -300,7 +288,7 @@ var text = turnContext.Activity.Text.ToLowerInvariant();
                     Run the bot, test it, then stop the bot (Ctrl + C in Windows or CMD + C in MacOS) and
                     commit your changes.
                 </div>
-                <h1 id="Bot#1-Flow#1-ReportingtheBasicCrimeinformationtoasimpleechobot-Step3"><strong>Step
+                <br><h1 ><strong>Step
                         3</strong></h1>
                 At this point, the bot will echo the crime we want to report, but that's all it does.
                 We need to make a couple of enhancements:
@@ -321,9 +309,7 @@ var text = turnContext.Activity.Text.ToLowerInvariant();
                 </div>
                 <div class="code panel pdl" style="border-width: 1px;">
                     <div class="codeContent panelContent pdl">
-                        <pre><code class="csharp
-                                data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
-                                data-theme="Confluence">// Create the storage we&#39;ll be using for User and Conversation state. (Memory is great for testing purposes.)
+                        <pre><code class="csharp">// Create the storage we&#39;ll be using for User and Conversation state. (Memory is great for testing purposes.)
 services.AddSingleton&lt;IStorage, MemoryStorage&gt;();
 // Create the User state.
 services.AddSingleton&lt;UserState&gt;();</code></pre>
@@ -336,9 +322,7 @@ services.AddSingleton&lt;UserState&gt;();</code></pre>
                 </div>
                 <div class="code panel pdl" style="border-width: 1px;">
                     <div class="codeContent panelContent pdl">
-                        <pre><code class="csharp
-                                data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
-                                data-theme="Confluence">private readonly UserState userState;
+                        <pre><code class="csharp">private readonly UserState userState;
 public EmptyBot(UserState userState)
 {
   this.userState = userState;
@@ -351,9 +335,7 @@ public EmptyBot(UserState userState)
                 </div>
                 <div class="code panel pdl" style="border-width: 1px;">
                     <div class="codeContent panelContent pdl">
-                        <pre><code class="csharp
-                                data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
-                                data-theme="Confluence">public class ReportingStateProperties
+                        <pre><code class="csharp">public class ReportingStateProperties
 {
    public string CrimeName {get; set; }  
 }</code></pre>
@@ -365,9 +347,7 @@ public EmptyBot(UserState userState)
                 </div>
                 <div class="code panel pdl" style="border-width: 1px;">
                     <div class="codeContent panelContent pdl">
-                        <pre><code class="csharp
-                                data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
-                                data-theme="Confluence">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
+                        <pre><code class="csharp">protected override async Task OnMessageActivityAsync(ITurnContext&lt;IMessageActivity&gt; turnContext, CancellationToken cancellationToken)
 {
   var text = turnContext.Activity.Text.ToLowerInvariant();
   var reportingUserStateAccessor = this.userState.CreateProperty&lt;ReportingStateProperties&gt;(&quot;reportState&quot;);
@@ -383,7 +363,7 @@ public EmptyBot(UserState userState)
                 </div>
                 The bot will only ask you to report a crime once now. Give it a test, then commit.
                 We can build upon this to build up a chat flow.
-                <h1><strong>Step 4. Over to you.</strong></h1>
+                <br><h1><strong>Step 4. Over to you.</strong></h1>
                 Add the remaining steps from the conversation flow.
                  A few pointers:
                 <ul>
@@ -400,7 +380,7 @@ public EmptyBot(UserState userState)
                         all questions in one go (count the steps through using the state properties).
                     </li>
                 </ul>
-                  <h1><strong>Step 5. A challenge</strong></h1>
+                  <br><h1><strong>Step 5. A challenge</strong></h1>
                 How can you restart the user's conversation if they type 'restart'.?
             </div>
         </div>
