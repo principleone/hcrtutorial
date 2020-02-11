@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -20,39 +20,55 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body class="container">
-    <div >
-        
-            
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <span><a href="index.html">HCR Bot Tutorial</a></span>
-                        </li>
-                    </ol>
+<body>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">HCR Tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="Environment-Setup.html">Environment Setup</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-1-Flow-1.html">Bot 1 - Flow 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-2-Flow-1.html">Bot 2 - Flow 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-2-Flow-2.html">Bot 2 - Flow 2</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="Bot-2-Flow-3.html">Bot 2 - Flow 3</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>
+                HCR Bot Tutorial : Bot #2 - Flow #3
+            </h1>
+        </div>
+        <div>
+            <div>
+                <p>OK, this section is completely over to you.</p>
+                <p>Build this next section using what you have learnt so far.</p>
+                <p>It may be of interest to know that you can stack up dialog calls, you can within a component
+                    dialog switch between WaterfallDialogs, or call other dialogs. </p>
+                <p>To understand what you can do with a dialog, using the context you get with each step, you should
+                    look into the documentation here - <a
+                        href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.bot.builder.dialogs.dialogcontext?view=botbuilder-dotnet-stable"
+                        class="external-link"
+                        rel="nofollow">https://docs.microsoft.com/en-us/dotnet/api/microsoft.bot.builder.dialogs.dialogcontext?view=botbuilder-dotnet-stable</a>.
+                </p>
+                <p />
             </div>
-            <div class="jumbotron" >
-                <h1 >
-                    HCR Bot Tutorial : Bot #2 - Flow #3
-                </h1>
-            </div>
-            </nav>
-            <div >
-                <div >
-                    <p>OK, this section is completely over to you.</p>
-                    <p>Build this next section using what you have learnt so far.</p>
-                    <p>It may be of interest to know that you can stack up dialog calls, you can within a component
-                        dialog switch between WaterfallDialogs, or call other dialogs. </p>
-                    <p>To understand what you can do with a dialog, using the context you get with each step, you should
-                        look into the documentation here - <a
-                            href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.bot.builder.dialogs.dialogcontext?view=botbuilder-dotnet-stable"
-                            class="external-link"
-                            rel="nofollow">https://docs.microsoft.com/en-us/dotnet/api/microsoft.bot.builder.dialogs.dialogcontext?view=botbuilder-dotnet-stable</a>.
-                    </p>
-                    <p />
-                </div>
-            </div>
-        
+        </div>
+
         <footer class="blockquote-footer">
             <section class="footer-body">
                 <p>Copyright Principle One Ltd 2020</p>
@@ -60,6 +76,7 @@
         </footer>
     </div>
     <script>hljs.initHighlightingOnLoad();</script>
+    </div>
 </body>
 
 </html>

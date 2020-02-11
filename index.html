@@ -11,79 +11,103 @@
     <script src="https://kit.fontawesome.com/afd53ae465.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="container">
-    <div class="main">
-        <div >
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active">
-                        <a href="index.html">HCR Bot Tutorial</a>
-                    </li>
-                </ol>
-            </nav>
+<body>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">HCR Tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">                
+                <li class="nav-item">
+                    <a class="nav-link" href="Environment-Setup.html">Environment Setup</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-1-Flow-1.html">Bot 1 - Flow 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-2-Flow-1.html">Bot 2 - Flow 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-2-Flow-2.html">Bot 2 - Flow 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-2-Flow-3.html">Bot 2 - Flow 3</a>
+                </li>
+            </ul>
         </div>
-        <div class="content">
-            <div class="jumbotron"><br><h1>Welcome to the hate crime reporting chatbot tutorial!</h1></div>
-            <div class="pageSection">
-                <div class="pageSectionHeader">
-                    <br><h1 class="pageSectionTitle">Available Pages:</h1>
+    </nav>
+    <div class="container">
+
+        <div class="main">
+            <div class="content">
+                <div class="jumbotron"><br>
+                    <h1>Welcome to the hate crime reporting chatbot tutorial!</h1>
                 </div>
-                <ul>
-                    <li>
-                        <a href="Environment-Setup.html">Setting up your environment</a> </li>
-                    <li>
-                        <a href="Bot-1-Flow-1.html">Bot #1 - Flow #1 - Reporting the Basic Crime information
-                            to a simple echo bot</a> </li>
-                    <li>
-                        <a href="Bot-2-Flow-1.html">Bot #2 - Flow #1 - Reporting basic crime information to
-                            a Dialog Bot</a> </li>
-                    <li>
-                        <a href="Bot-2-Flow-2.html">Bot #2 - Flow #2 - Capturing the location</a> </li>
-                    <li>
-                        <a href="Bot-2-Flow-3.html">Bot #2 - Flow #3</a> </li>
-                </ul>
-            </div>
-            <div >
-                <br><h1 >Tutorial
-                    conventions:</h1>
-                <p>Regular text from the tutorial will be in plaintext like this.</p>
-                <div class="alert alert-primary" role="alert">
-                    <i class="fa fa-tasks"></i>
-                    Instruction, please follow this!
+                <div class="pageSection">
+                    <div class="pageSectionHeader">
+                        <br>
+                        <h1 class="pageSectionTitle">Available Pages:</h1>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="Environment-Setup.html">Setting up your environment</a> </li>
+                        <li>
+                            <a href="Bot-1-Flow-1.html">Bot #1 - Flow #1 - Reporting the Basic Crime information
+                                to a simple echo bot</a> </li>
+                        <li>
+                            <a href="Bot-2-Flow-1.html">Bot #2 - Flow #1 - Reporting basic crime information to
+                                a Dialog Bot</a> </li>
+                        <li>
+                            <a href="Bot-2-Flow-2.html">Bot #2 - Flow #2 - Capturing the location</a> </li>
+                        <li>
+                            <a href="Bot-2-Flow-3.html">Bot #2 - Flow #3</a> </li>
+                    </ul>
                 </div>
-                <div class="alert alert-info" role="alert">
-                    <i class="fa fa-info"></i>
-                    Note, useful to observe what is here
-                </div>
-                <div class="alert alert-success">
-                    <i class="fa fa-check"></i>
-                    Result, highlights something you should expect to see at this point
-                </div>
-                <div class="alert alert-warning">
-                    <i class="fa fa-warning"></i>
-                    Warning, watch out for any gotchas highlighted in yellow
-                </div>
-                <div class="code panel pdl" style="border-width: 1px;">
-                    <div class="codeContent panelContent pdl">
-                        <pre><code class="csharp"
+                <div>
+                    <br>
+                    <h1>Tutorial
+                        conventions:</h1>
+                    <p>Regular text from the tutorial will be in plaintext like this.</p>
+                    <div class="alert alert-primary" role="alert">
+                        <i class="fa fa-tasks"></i>
+                        Instruction, please follow this!
+                    </div>
+                    <div class="alert alert-info" role="alert">
+                        <i class="fa fa-info"></i>
+                        Note, useful to observe what is here
+                    </div>
+                    <div class="alert alert-success">
+                        <i class="fa fa-check"></i>
+                        Result, highlights something you should expect to see at this point
+                    </div>
+                    <div class="alert alert-warning">
+                        <i class="fa fa-warning"></i>
+                        Warning, watch out for any gotchas highlighted in yellow
+                    </div>
+                    <div class="code panel pdl" style="border-width: 1px;">
+                        <div class="codeContent panelContent pdl">
+                            <pre><code class="csharp"
                             data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                             data-theme="Confluence">//Code Snippet. 
 //Your code should match what is in here</code></pre>
+                        </div>
                     </div>
-                </div>
-                <div class="alert alert-danger">
-                    <i class="fa fa-times"></i>
-                    Something has gone terribly, terribly wrong. We don’t use this highlighting!
+                    <div class="alert alert-danger">
+                        <i class="fa fa-times"></i>
+                        Something has gone terribly, terribly wrong. We don’t use this highlighting!
+                    </div>
                 </div>
             </div>
         </div>
+        <footer class="blockquote-footer">
+            <section class="footer-body">
+                <p>Copyright Principle One Ltd 2020</p>
+            </section>
+        </footer>
+        <script>hljs.initHighlightingOnLoad();</script>
     </div>
-    <footer class="blockquote-footer">
-        <section class="footer-body">
-            <p>Copyright Principle One Ltd 2020</p>
-        </section>
-    </footer>
-    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 
 </html>

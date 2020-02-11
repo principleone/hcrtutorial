@@ -20,124 +20,144 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body class="container">
-    <div>
-        <div>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <span><a href="index.html">HCR Bot Tutorial</a></span>
-                    </li>
-                </ol>
-            </nav>
-
-            <div class="jumbotron">
-                <h1>
-                    HCR Bot Tutorial : Bot #2 - Flow #1
-                </h1>
-                <p class="lead"> Reporting basic crime information to a Dialog Bot</p>
-            </div>
-
+<body>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">HCR Tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="Environment-Setup.html">Environment Setup</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-1-Flow-1.html">Bot 1 - Flow 1</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="Bot-2-Flow-1.html">Bot 2 - Flow 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-2-Flow-2.html">Bot 2 - Flow 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-2-Flow-3.html">Bot 2 - Flow 3</a>
+                </li>
+            </ul>
         </div>
-        <div class="row">
-            <div class="col-2">
-                <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="step1-tab" data-toggle="tab" href="#step1" role="tab"
-                            aria-controls="step 1" aria-selected="true">Step 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="step2-tab" data-toggle="tab" href="#step2" role="tab"
-                            aria-controls="step 2" aria-selected="false">Step 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="step3-tab" data-toggle="tab" href="#step3" role="tab"
-                            aria-controls="step 3" aria-selected="false">Step 3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="step4-tab" data-toggle="tab" href="#step4" role="tab"
-                            aria-controls="step 4" aria-selected="false">Step 4</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="step5-tab" data-toggle="tab" href="#step5" role="tab"
-                            aria-controls="step 5" aria-selected="false">Step 5</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="step6-tab" data-toggle="tab" href="#step6" role="tab"
-                            aria-controls="step 6" aria-selected="false">Step 6</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="step7-tab" data-toggle="tab" href="#step7" role="tab"
-                            aria-controls="step 7" aria-selected="false">Step 7</a>
-                    </li>
-                </ul>
+    </nav>
+    <div class="container">
+        <div>
+            <div>
+                <div class="jumbotron">
+                    <h1>
+                        HCR Bot Tutorial : Bot #2 - Flow #1
+                    </h1>
+                    <p class="lead"> Reporting basic crime information to a Dialog Bot</p>
+                </div>
+
             </div>
-            <div class="col-10">
-                <div class="tab-content" id="tabbedsteps">
-                    <div class="tab-pane fade show active" id="step1" role="tabpanel" aria-labelledby="step1-tab">
-                        <h1>Step 1</h1>
-                        We are going to start a clean bot for this, it’s a bit easier than refactoring the old one.
-                        First create a new VS Code project.
-                        <p />
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Create a new empty folder on your computer and open that folder in Code).
-                        </div>
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            In the terminal run the following to create the new empty bot, and install the package
-                            that provides dialog functionality.
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="sh"
+            <div class="row">
+                <div class="col-2">
+                    <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="step1-tab" data-toggle="tab" href="#step1" role="tab"
+                                aria-controls="step 1" aria-selected="true">Step 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="step2-tab" data-toggle="tab" href="#step2" role="tab"
+                                aria-controls="step 2" aria-selected="false">Step 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="step3-tab" data-toggle="tab" href="#step3" role="tab"
+                                aria-controls="step 3" aria-selected="false">Step 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="step4-tab" data-toggle="tab" href="#step4" role="tab"
+                                aria-controls="step 4" aria-selected="false">Step 4</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="step5-tab" data-toggle="tab" href="#step5" role="tab"
+                                aria-controls="step 5" aria-selected="false">Step 5</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="step6-tab" data-toggle="tab" href="#step6" role="tab"
+                                aria-controls="step 6" aria-selected="false">Step 6</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="step7-tab" data-toggle="tab" href="#step7" role="tab"
+                                aria-controls="step 7" aria-selected="false">Step 7</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-10">
+                    <div class="tab-content" id="tabbedsteps">
+                        <div class="tab-pane fade show active" id="step1" role="tabpanel" aria-labelledby="step1-tab">
+                            <h1>Step 1</h1>
+                            We are going to start a clean bot for this, it’s a bit easier than refactoring the old one.
+                            First create a new VS Code project.
+                            <p />
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Create a new empty folder on your computer and open that folder in Code).
+                            </div>
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                In the terminal run the following to create the new empty bot, and install the package
+                                that provides dialog functionality.
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="sh"
                                 data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence"
                                 data-theme="Confluence">dotnet new -i Microsoft.Bot.Framework.CSharp.EmptyBot::4.6.2
 dotnet new emptybot
 dotnet add package microsoft.bot.builder.dialogs
 </code></pre>
+                                </div>
                             </div>
-                        </div>
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Copy the .gitignore file from the first tutorial into this folder
-                            Then commit your changes in the terminal:
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="sh"
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Copy the .gitignore file from the first tutorial into this folder
+                                Then commit your changes in the terminal:
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="sh"
                                 data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence"
                                 data-theme="Confluence">git init
 git add -A</code></pre>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade show" id="step2" role="tabpanel" aria-labelledby="step2-tab">
-                        <h1>Step 2.</h1>
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            <span class="inline-comment-marker" data-ref="52fd4a8c-735b-49a8-8226-63f758503e56">Rename
-                                the
-                                EmptyBot class</span> to
-                            be HCRDialogBot (right-click and rename in the code editing window) - make sure you
-                            rename the file too (right click and rename that
-                        </div>
-                        Now we’re going to make it a dialog aware bot:
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            First, make sure you add the referen<span class="inline-comment-marker"
-                                data-ref="aa812379-06e6-4e2e-9ae5-7b7a35c256f8">ce at the top:</span>
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                        <div class="tab-pane fade show" id="step2" role="tabpanel" aria-labelledby="step2-tab">
+                            <h1>Step 2.</h1>
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                <span class="inline-comment-marker"
+                                    data-ref="52fd4a8c-735b-49a8-8226-63f758503e56">Rename
+                                    the
+                                    EmptyBot class</span> to
+                                be HCRDialogBot (right-click and rename in the code editing window) - make sure you
+                                rename the file too (right click and rename that
+                            </div>
+                            Now we’re going to make it a dialog aware bot:
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                First, make sure you add the referen<span class="inline-comment-marker"
+                                    data-ref="aa812379-06e6-4e2e-9ae5-7b7a35c256f8">ce at the top:</span>
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">using Microsoft.Bot.Builder.Dialog;</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Now create the DialogSet as a field and initialise in the constructor, this will track
-                            our bot’s dialogs. #
-                            We’re also going to declare our first dialog.
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Now create the DialogSet as a field and initialise in the constructor, this will track
+                                our bot’s dialogs. #
+                                We’re also going to declare our first dialog.
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">    private readonly DialogSet dialogSet;
         public HCRDialogBot()
@@ -145,20 +165,20 @@ git add -A</code></pre>
             dialogSet = new DialogSet();
             dialogSet.Add(new GreetingDialog())
         }</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        <p />
-                        That new class, GreetingDialog will not yet exist. You can use VSCodes Fixes system to
-                        automatically create it as a new type.
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Click on GreetingDialog in the code editor and then click on the yellow lightbulb,
-                            choose
-                            to generate the class.
-                        </div>
-                        This produces:
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            <p />
+                            That new class, GreetingDialog will not yet exist. You can use VSCodes Fixes system to
+                            automatically create it as a new type.
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Click on GreetingDialog in the code editor and then click on the yellow lightbulb,
+                                choose
+                                to generate the class.
+                            </div>
+                            This produces:
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">
 namespace HCRDialogs
@@ -170,27 +190,27 @@ namespace HCRDialogs
       }
    }
 }</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        We are going to make this a ComponentDialog.
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Change the type from which the class inherits to be a ComponentDialog
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            We are going to make this a ComponentDialog.
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Change the type from which the class inherits to be a ComponentDialog
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">   internal class GreetingDialog : ComponentDialog
 </code></pre>
+                                </div>
                             </div>
-                        </div>
-                        Next we need to create the dialog. A simple ‘waterfall’ will suffice for us here:
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Copy or type out this to make you constructor
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            Next we need to create the dialog. A simple ‘waterfall’ will suffice for us here:
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Copy or type out this to make you constructor
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
                                 data-theme="Confluence">    public GreetingDialog()       
       {
@@ -204,64 +224,64 @@ namespace HCRDialogs
          //Make sure we start with the waterfall dialog
          InitialDialogId = nameof(WaterfallDialog);
       }</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        OK, that’s it ready to go. It just doesn’t do very much. Let’s add our first ‘prompt’.
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            In the waterfallSteps array, add an element called PromptForCrimeType as below.
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            OK, that’s it ready to go. It just doesn’t do very much. Let’s add our first ‘prompt’.
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                In the waterfallSteps array, add an element called PromptForCrimeType as below.
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">  var waterfallSteps = new WaterfallStep[]
         {
          PromptForCrimeType,
         };</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        <div class="alert alert-info" role="alert">
-                            <i class="fa fa-info"></i>
-                            The WaterfallStep type of this array, is what is known as a delegate in C#, that is, it
-                            expects a method with a particular signature, i.e. a particular return type and
-                            parameters.
-                        </div>
-                        Because we haven’t created that method, VS Code will ‘lint’ this - i.e. underline it with a
-                        red
-                        squiggly line. Helpfully if you click on it, a light-bulb appears that you can click on for
-                        suggestions.
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Use Visual Studio code’s Show Fixes feature to create a new method.
-                        </div>
-                        This will produce the below, you can create manually if anything goes wrong:
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            <div class="alert alert-info" role="alert">
+                                <i class="fa fa-info"></i>
+                                The WaterfallStep type of this array, is what is known as a delegate in C#, that is, it
+                                expects a method with a particular signature, i.e. a particular return type and
+                                parameters.
+                            </div>
+                            Because we haven’t created that method, VS Code will ‘lint’ this - i.e. underline it with a
+                            red
+                            squiggly line. Helpfully if you click on it, a light-bulb appears that you can click on for
+                            suggestions.
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Use Visual Studio code’s Show Fixes feature to create a new method.
+                            </div>
+                            This will produce the below, you can create manually if anything goes wrong:
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">private Task&lt;DialogTurnResult&gt; PromptForCrimeType(WaterfallStepContext stepContext, CancellationToken cancellationToken)
 {
   throw new NotImplementedException();
 }</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        Now let’s get it to do something:
-                        As with our basic bot in the first guide 1, we need to declare a constant:
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Add this to your class
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            Now let’s get it to do something:
+                            As with our basic bot in the first guide 1, we need to declare a constant:
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Add this to your class
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">public const string WhatCrimeMessage = &quot;What type of hate crime are you reporting?&quot;;</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Then modify the auto generated method
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Then modify the auto generated method
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">
       private async Task&lt;DialogTurnResult&gt; PromptForCrimeType(WaterfallStepContext stepContext, CancellationToken cancellationToken)
@@ -273,35 +293,35 @@ namespace HCRDialogs
                 },
                 cancellationToken);
       }</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        <div class="alert alert-info" role="alert">
-                            <i class="fa fa-info"></i>
-                            Note the ‘async' keyword in the method’s declaration above. This wasn’t in the generated
-                            output. The IDE prompted me to add this because I used the ‘await’ keyword.
-                        </div>
-                        <div class="confluence-information-macro confluence-information-macro-note"><span
-                                class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span>
-                            I also had to import the library that MessageFactory is in, i.e. add at the top:
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            <div class="alert alert-info" role="alert">
+                                <i class="fa fa-info"></i>
+                                Note the ‘async' keyword in the method’s declaration above. This wasn’t in the generated
+                                output. The IDE prompted me to add this because I used the ‘await’ keyword.
+                            </div>
+                            <div class="confluence-information-macro confluence-information-macro-note"><span
+                                    class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span>
+                                I also had to import the library that MessageFactory is in, i.e. add at the top:
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">using Microsoft.Bot.Builder;</code></pre>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade show" id="step3" role="tabpanel" aria-labelledby="step3-tab">
-                        <h1>Step 3.</h1>
-                        Now, before it will run our dialog, we just need to make sure it’s actually launched.
-                        In our HCRDialogBot class, we now need to make a couple of changes.
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Use the following, I’ll explain what it does below.
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                        <div class="tab-pane fade show" id="step3" role="tabpanel" aria-labelledby="step3-tab">
+                            <h1>Step 3.</h1>
+                            Now, before it will run our dialog, we just need to make sure it’s actually launched.
+                            In our HCRDialogBot class, we now need to make a couple of changes.
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Use the following, I’ll explain what it does below.
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: c#; gutter: false; theme: Confluence"
                                 data-theme="Confluence">   public class HCRDialogBot : IBot
    {
@@ -337,33 +357,34 @@ namespace HCRDialogs
          }
       }
    }</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        <div class="alert alert-info" role="alert">
-                            <i class="fa fa-info"></i>
-                            From the top, we don’t need to inherit from the Activity Handler anymore, we are going
-                            to
-                            define our own bot fully (hence the IBot interface).
-                            We are going to use a ConversationState object (to hold state about which dialog the
-                            user
-                            is in).
-                            We have removed the old <code>OnMembersAddedAsync</code> method, as we are going to
-                            manage the interaction through the dialog - we have added the OnTurnAsync method, which
-                            will ensure that the dialog is started (if not currently active), or c<span
-                                class="inline-comment-marker" data-ref="a1c3d0b8-a16e-4106-9576-2c0f63c68bb9">ontinue if
-                                it already is. </span>
-                        </div>
-                        Finally, we need to register the ConversationState object with the framework. This class
-                        also
-                        needs some kind of storage (we will use memory storage again.
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            In Startup.cs, in the <span class="inline-comment-marker"
-                                data-ref="88d776bf-28f3-41ac-90ec-94981612dfb0">ConfigureServices</span> method, add
-                            the following, and make sure that it references HCRDialogBot and not EmptyBot.
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            <div class="alert alert-info" role="alert">
+                                <i class="fa fa-info"></i>
+                                From the top, we don’t need to inherit from the Activity Handler anymore, we are going
+                                to
+                                define our own bot fully (hence the IBot interface).
+                                We are going to use a ConversationState object (to hold state about which dialog the
+                                user
+                                is in).
+                                We have removed the old <code>OnMembersAddedAsync</code> method, as we are going to
+                                manage the interaction through the dialog - we have added the OnTurnAsync method, which
+                                will ensure that the dialog is started (if not currently active), or c<span
+                                    class="inline-comment-marker"
+                                    data-ref="a1c3d0b8-a16e-4106-9576-2c0f63c68bb9">ontinue if
+                                    it already is. </span>
+                            </div>
+                            Finally, we need to register the ConversationState object with the framework. This class
+                            also
+                            needs some kind of storage (we will use memory storage again.
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                In Startup.cs, in the <span class="inline-comment-marker"
+                                    data-ref="88d776bf-28f3-41ac-90ec-94981612dfb0">ConfigureServices</span> method, add
+                                the following, and make sure that it references HCRDialogBot and not EmptyBot.
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">// Create the storage we&#39;ll be using for User and Conversation state. (Memory is great for testing purposes.)
 services.AddSingleton&lt;IStorage, MemoryStorage&gt;();
@@ -373,38 +394,38 @@ services.AddSingleton&lt;UserState&gt;();
 services.AddSingleton&lt;ConversationState&gt;();
 //Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
 services.AddTransient&lt;IBot, HCRDialogBot&gt;();</code></pre>
+                                </div>
+                            </div>
+                            OK, lots done here.
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                <span class="inline-comment-marker" data-ref="f3f652f9-e3aa-4578-b62b-febeabb8c679">Try
+                                    running the bot (you will have to say hello to it before it messages you), if it
+                                    works, commit your changes!</span>
                             </div>
                         </div>
-                        OK, lots done here.
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            <span class="inline-comment-marker" data-ref="f3f652f9-e3aa-4578-b62b-febeabb8c679">Try
-                                running the bot (you will have to say hello to it before it messages you), if it
-                                works, commit your changes!</span>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade show" id="step4" role="tabpanel" aria-labelledby="step4-tab">
-                        <h1>Step 4 -
-                            extending the dialog. </h1>
-                        This step should be a bit simpler.
-                        We begin by adding the next step as as a method inside our GreetingDialog constructor.
-                        We can use Code’s Show Fixes prompt to generate this methods too:
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                        <div class="tab-pane fade show" id="step4" role="tabpanel" aria-labelledby="step4-tab">
+                            <h1>Step 4 -
+                                extending the dialog. </h1>
+                            This step should be a bit simpler.
+                            We begin by adding the next step as as a method inside our GreetingDialog constructor.
+                            We can use Code’s Show Fixes prompt to generate this methods too:
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">    var waterfallSteps = new WaterfallStep[]
          {
             PromptForCrimeType,
             PromptForCrimeTime,            
          };</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        <p />
-                        Prompt for crime time should look like this. Note that we are storing the result from the
-                        previous step - the crime type - in the stepContext’s Values dictionary).
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            <p />
+                            Prompt for crime time should look like this. Note that we are storing the result from the
+                            previous step - the crime type - in the stepContext’s Values dictionary).
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">      private async Task&lt;DialogTurnResult&gt; PromptForCrimeTime(WaterfallStepContext stepContext, CancellationToken cancellationToken)
       {
@@ -416,32 +437,32 @@ services.AddTransient&lt;IBot, HCRDialogBot&gt;();</code></pre>
                 cancellationToken);
       }
 </code></pre>
+                                </div>
                             </div>
+                            <p />
                         </div>
-                        <p />
-                    </div>
-                    <div class="tab-pane fade show" id="step5" role="tabpanel" aria-labelledby="step5-tab">
-                        <h1>Step 5 - over to
-                            you</h1>
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Now add in a step to store the crime time, and to prompt for the bad behaviour.
+                        <div class="tab-pane fade show" id="step5" role="tabpanel" aria-labelledby="step5-tab">
+                            <h1>Step 5 - over to
+                                you</h1>
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Now add in a step to store the crime time, and to prompt for the bad behaviour.
+                            </div>
+                            <p>Don’t worry about storing the bad behaviour, we’ll capture that in the next step. </p>
+                            <span class="confluence-embedded-file-wrapper image-center-wrapper"><img
+                                    src="attachments/1030782977/1031077900.png"></span>
+                            <p />
                         </div>
-                        <p>Don’t worry about storing the bad behaviour, we’ll capture that in the next step. </p>
-                        <span class="confluence-embedded-file-wrapper image-center-wrapper"><img
-                                src="attachments/1030782977/1031077900.png"></span>
-                        <p />
-                    </div>
-                    <div class="tab-pane fade show" id="step6" role="tabpanel" aria-labelledby="step-tab">
-                        <h1>Step 6. </h1>
-                        Cool, we now need to end the dialog, and return the information we’ve requested.
-                        First, we want to package the information up and return it to the user.
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Create a class called ‘GreetingResult’, and add properties for CrimeType, CrimeTime and
-                            CrimeBehaviour:
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                        <div class="tab-pane fade show" id="step6" role="tabpanel" aria-labelledby="step-tab">
+                            <h1>Step 6. </h1>
+                            Cool, we now need to end the dialog, and return the information we’ve requested.
+                            First, we want to package the information up and return it to the user.
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Create a class called ‘GreetingResult’, and add properties for CrimeType, CrimeTime and
+                                CrimeBehaviour:
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence"> public class GreetingResult
    {
@@ -449,19 +470,19 @@ services.AddTransient&lt;IBot, HCRDialogBot&gt;();</code></pre>
       public string CrimeTime { get; set; }
       public string CrimeBehaviour { get; set; }
    }</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Back in GreetingDialog, add a new step called FinishAsync and generate it’s method.
-                        </div>
-                        That method, we want to instantiate a new GreetingResult, set it’s values, and then end the
-                        dialog, returning the new greeting result.
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Copy the below into your new method (and add the async keyword)
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Back in GreetingDialog, add a new step called FinishAsync and generate it’s method.
+                            </div>
+                            That method, we want to instantiate a new GreetingResult, set it’s values, and then end the
+                            dialog, returning the new greeting result.
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Copy the below into your new method (and add the async keyword)
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">      private async Task&lt;DialogTurnResult&gt; FinishAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
       {
@@ -473,57 +494,57 @@ services.AddTransient&lt;IBot, HCRDialogBot&gt;();</code></pre>
          };
          return await stepContext.EndDialogAsync(greetingResult, cancellationToken: cancellationToken);
       }</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        This ends the dialog, but we’re not doing anything with the results yet.
-                        <div class="alert alert-info" role="alert">
-                            <i class="fa fa-info"></i>
-                            You can run the bot now, it will ask the three questions in a never ending loop as you
-                            talk to it.
-                        </div>
-                        You may have noticed that, we’re missing those friendly Hi!… and Thank you… messages. Those
-                        we
-                        don’t want to add to this dialog, but in the main ‘flow’ of the bot.
-                        So, back in the <code>HCRDialogBot</code>class, in our OnTurnAsync method, let’s add them
-                        there.
-                        Just as in the first tutorial.
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            First…add two constants at the top of the class.
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            This ends the dialog, but we’re not doing anything with the results yet.
+                            <div class="alert alert-info" role="alert">
+                                <i class="fa fa-info"></i>
+                                You can run the bot now, it will ask the three questions in a never ending loop as you
+                                talk to it.
+                            </div>
+                            You may have noticed that, we’re missing those friendly Hi!… and Thank you… messages. Those
+                            we
+                            don’t want to add to this dialog, but in the main ‘flow’ of the bot.
+                            So, back in the <code>HCRDialogBot</code>class, in our OnTurnAsync method, let’s add them
+                            there.
+                            Just as in the first tutorial.
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                First…add two constants at the top of the class.
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence">public const string Greeting = &quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what happened, and I will let the club know so they can take action!&quot;;
 public const string ThankYou = &quot;Thank you, I have stored all that information. Let’s move onto where this happened.&quot;;</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        Next, in the OnTurnAsync method…before we ‘begindialogasync’, we want to send the greeting.
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Use this snippet:
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            Next, in the OnTurnAsync method…before we ‘begindialogasync’, we want to send the greeting.
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Use this snippet:
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence"> if (dc.ActiveDialog is null)
                {
                     await turnContext.SendActivityAsync(MessageFactory.Text(Greeting));
                   await dc.BeginDialogAsync(nameof(GreetingDialog), null, cancellationToken);
                }</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        Then, to check for the end of the dialog, we want to check the object returned from our call
-                        to
-                        ContinueDialogResult. This object has a Status property, and a ‘Result’ property, hopefully
-                        containing the result from our GreetingDialog.
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            Use this snippet:
-                            We can use these like this:
-                        </div>
-                        <div class="code panel pdl" style="border-width: 1px;">
-                            <div class="codeContent panelContent pdl">
-                                <pre><code class="csharp"
+                            Then, to check for the end of the dialog, we want to check the object returned from our call
+                            to
+                            ContinueDialogResult. This object has a Status property, and a ‘Result’ property, hopefully
+                            containing the result from our GreetingDialog.
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                Use this snippet:
+                                We can use these like this:
+                            </div>
+                            <div class="code panel pdl" style="border-width: 1px;">
+                                <div class="codeContent panelContent pdl">
+                                    <pre><code class="csharp"
                                 data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence"
                                 data-theme="Confluence"> else
                {
@@ -535,29 +556,30 @@ public const string ThankYou = &quot;Thank you, I have stored all that
                      await turnContext.SendActivityAsync(MessageFactory.Text(ThankYou), cancellationToken);
                   }
                }</code></pre>
+                                </div>
+                            </div>
+                            <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
+                                OK, try running it, and make sure to commit your changes if it works!
                             </div>
                         </div>
-                        <div class="alert alert-primary" role="alert"><i class="fa fa-tasks"></i>
-                            OK, try running it, and make sure to commit your changes if it works!
+                        <div class="tab-pane fade show" id="step7" role="tabpanel" aria-labelledby="step7-tab">
+                            <h1>Step 7 - A
+                                challenge</h1>
+                            How would you get this Bot to restart if the user types ‘restart’?
                         </div>
-                    </div>
-                    <div class="tab-pane fade show" id="step7" role="tabpanel" aria-labelledby="step7-tab">
-                        <h1>Step 7 - A
-                            challenge</h1>
-                        How would you get this Bot to restart if the user types ‘restart’?
                     </div>
                 </div>
             </div>
         </div>
-    </div>    
-    <div class="row">
-        <footer class="blockquote-footer">
-            <section class="footer-body">
-                Copyright Principle One Ltd 2020
-            </section>
-        </footer>
+        <div class="row">
+            <footer class="blockquote-footer">
+                <section class="footer-body">
+                    Copyright Principle One Ltd 2020
+                </section>
+            </footer>
+        </div>
+        <script>hljs.initHighlightingOnLoad();</script>
     </div>
-    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 
 </html>

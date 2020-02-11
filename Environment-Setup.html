@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>HCR Bot Tutorial : Environment Setup</title>    
+    <title>HCR Bot Tutorial : Environment Setup</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,60 +11,87 @@
     <script src="https://kit.fontawesome.com/afd53ae465.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="container">
-    <div >
-        <div >
-            <div >
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <span><a href="index.html">HCR Bot Tutorial</a></span>
-                        </li>
-                    </ol>
-            </div>
-            <br><div class="jumbotron" >
-                <h1 >
-                    Setting up your environment
-                </h1>
-            </div>
-            </nav>
-            <div >
-                <div >
-                    <p>We are going to be developing a chatbot. We will be using the Microsoft Bot Framework.  This
-                        framework has implementations for Python, NodeJS and .Net Core . For this particular tutorial we
-                        will be using the C# language in .Net Core. </p>
-                    <p>No past experience with C#. However, we familiarity with Procedural and Object Oriented
-                        programming is necessary to get the most of the session. I.e. defining variables, managing flow
-                        control with loops and conditional statements, recognising classes, and methods or functions.
-                    </p>
-                    <p>Familiarity with Git and Visual Studio Code is also advantageous, as we will assume some
-                        understanding of navigating those tools and performing common tasks. </p>
-                    <p>To begin, we need to setup environments. You will need to download and install the following:</p>
-                    <ul> 
-                    <li>Visual Studio Code - <a href="https://code.visualstudio.com/" class="external-link"
-                            rel="nofollow">https://code.visualstudio.com/</a></li>
-                    <li>Dotnet Core v. 2.20 <a href="https://dotnet.microsoft.com/download/dotnet-core/2.2"
-                            class="external-link"
-                            rel="nofollow">https://dotnet.microsoft.com/download/dotnet-core/2.2</a> (download the
-                        latest SDK and runtime).</li>
-                    <li>Git - <a href="https://git-scm.com/" class="external-link"
-                            rel="nofollow">https://git-scm.com/</a> </li>
-                    <li>Bot framework emulator - <a href="https://github.com/microsoft/BotFramework-Emulator/releases"
-                            class="external-link"
-                            rel="nofollow">https://github.com/microsoft/BotFramework-Emulator/releases</a> (click on the
-                        most recent version number and scroll down to find the download link). </li>
-                    
-                </ul>                                    
+<body>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">HCR Tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Environment-Setup.html">Environment Setup</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-1-Flow-1.html">Bot 1 - Flow 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-2-Flow-1.html">Bot 2 - Flow 1</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="Bot-2-Flow-2.html">Bot 2 - Flow 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-2-Flow-3.html">Bot 2 - Flow 3</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div>
+            <div>
+                
+                <div class="jumbotron">
+                    <h1>
+                        Setting up your environment
+                    </h1>
+                </div>
+                <div>
+                    <div>
+                        <p>We are going to be developing a chatbot. We will be using the Microsoft Bot Framework.  This
+                            framework has implementations for Python, NodeJS and .Net Core . For this particular
+                            tutorial we
+                            will be using the C# language in .Net Core. </p>
+                        <p>No past experience with C#. However, we familiarity with Procedural and Object Oriented
+                            programming is necessary to get the most of the session. I.e. defining variables, managing
+                            flow
+                            control with loops and conditional statements, recognising classes, and methods or
+                            functions.
+                        </p>
+                        <p>Familiarity with Git and Visual Studio Code is also advantageous, as we will assume some
+                            understanding of navigating those tools and performing common tasks. </p>
+                        <p>To begin, we need to setup environments. You will need to download and install the following:
+                        </p>
+                        <ul> 
+                            <li>Visual Studio Code - <a href="https://code.visualstudio.com/" class="external-link"
+                                    rel="nofollow">https://code.visualstudio.com/</a></li>
+                            <li>Dotnet Core v. 2.20 <a href="https://dotnet.microsoft.com/download/dotnet-core/2.2"
+                                    class="external-link"
+                                    rel="nofollow">https://dotnet.microsoft.com/download/dotnet-core/2.2</a> (download
+                                the
+                                latest SDK and runtime).</li>
+                            <li>Git - <a href="https://git-scm.com/" class="external-link"
+                                    rel="nofollow">https://git-scm.com/</a> </li>
+                            <li>Bot framework emulator - <a
+                                    href="https://github.com/microsoft/BotFramework-Emulator/releases"
+                                    class="external-link"
+                                    rel="nofollow">https://github.com/microsoft/BotFramework-Emulator/releases</a>
+                                (click on the
+                                most recent version number and scroll down to find the download link). </li>
+
+                        </ul>
+                    </div>
                 </div>
             </div>
+            <footer class="blockquote-footer">
+                <section class="footer-body">
+                    <p>Copyright Principle One Ltd 2020</p>
+                </section>
+            </footer>
         </div>
-        <footer class="blockquote-footer">
-            <section class="footer-body">
-                <p>Copyright Principle One Ltd 2020</p>
-            </section>
-        </footer>
+        <script>hljs.initHighlightingOnLoad();</script>
     </div>
-    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 
 </html>

@@ -6,40 +6,56 @@
         HCR Bot Tutorial : Bot #1 - Flow #1 - Reporting the Basic Crime information to a simple echo bot
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/afd53ae465.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </head>
 
-<body class="container">
-    <div>
-        <div>
-            <div>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <span><a href="index.html">HCR Bot Tutorial</a></span>
-                        </li>
-                    </ol>
-            </div>
-            <br>
-            <div class="jumbotron">
-                <h1>
-                    HCR Bot Tutorial : Bot #1 - Flow #1
-                </h1>
-                <p class="lead">Reporting the Basic Crime information to a simple echo bot</p>
-            </div>
+<body>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">HCR Tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="Environment-Setup.html">Environment Setup</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="Bot-1-Flow-1.html">Bot 1 - Flow 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-2-Flow-1.html">Bot 2 - Flow 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-2-Flow-2.html">Bot 2 - Flow 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Bot-2-Flow-3.html">Bot 2 - Flow 3</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1>
+                HCR Bot Tutorial : Bot #1 - Flow #1
+            </h1>
+            <p class="lead">Reporting the Basic Crime information to a simple echo bot</p>
         </div>
 
         <div class="row">
@@ -47,27 +63,27 @@
                 <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="prereqs-tab" data-toggle="tab" href="#prereqs" role="tab"
-                           aria-controls="prereqs" aria-selected="true">Prerequisites</a>
+                            aria-controls="prereqs" aria-selected="true">Prerequisites</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="step1-tab" data-toggle="tab" href="#step1" role="tab"
-                           aria-controls="step 1" aria-selected="true">Step 1</a>
+                            aria-controls="step 1" aria-selected="true">Step 1</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="step2-tab" data-toggle="tab" href="#step2" role="tab"
-                           aria-controls="step 2" aria-selected="false">Step 2</a>
+                            aria-controls="step 2" aria-selected="false">Step 2</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="step3-tab" data-toggle="tab" href="#step3" role="tab"
-                           aria-controls="step 3" aria-selected="false">Step 3</a>
+                            aria-controls="step 3" aria-selected="false">Step 3</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="step4-tab" data-toggle="tab" href="#step4" role="tab"
-                           aria-controls="step 4" aria-selected="false">Step 4</a>
+                            aria-controls="step 4" aria-selected="false">Step 4</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="step5-tab" data-toggle="tab" href="#step5" role="tab"
-                           aria-controls="step 5" aria-selected="false">Step 5</a>
+                            aria-controls="step 5" aria-selected="false">Step 5</a>
                     </li>
                 </ul>
             </div>
@@ -98,7 +114,7 @@
                             </li>
                             <li>
                                 You have completed <a href="Environment-Setup.html" data-linked-resource-
-                                                      data-linked-resource-version="7" data-linked-resource-type="page">
+                                    data-linked-resource-version="7" data-linked-resource-type="page">
                                     Environment
                                     Setup
                                 </a> .
@@ -151,7 +167,7 @@ dotnet new emptybot</code></pre>
                                 </div>
                             </div>
                             The BotFramework is actually running on top of a framework called <a href="http://ASP.Net"
-                                                                                                 class="external-link" rel="nofollow">ASP.Net</a> MVC, which is the .Net framework for
+                                class="external-link" rel="nofollow">ASP.Net</a> MVC, which is the .Net framework for
                             web
                             application development.
                             <br>
@@ -212,8 +228,9 @@ dotnet new emptybot</code></pre>
                         </div>
                         <div class="alert alert-success" role="alert">
                             <i class="fa fa-check"></i>
-                            In short, what we have done, is made a chatbot that runs at: <a href="http://localhost:3978/api/messages" class="external-link"
-                                                                                            rel="nofollow">http://localhost:3978/api/messages</a>
+                            In short, what we have done, is made a chatbot that runs at: <a
+                                href="http://localhost:3978/api/messages" class="external-link"
+                                rel="nofollow">http://localhost:3978/api/messages</a>
                         </div>
                         <div class="alert alert-primary" role="alert">
                             <i class="fa fa-tasks"></i>
@@ -245,9 +262,10 @@ touch .gitignore</code></pre>
                         Code settings), if we tell it what we want it to ignore.
                         <div class="alert alert-primary" role="alert">
                             <i class="fa fa-tasks"></i>
-                            Navigate to: <a href="https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore"
-                                            class="external-link"
-                                            rel="nofollow">https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore</a>
+                            Navigate to: <a
+                                href="https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore"
+                                class="external-link"
+                                rel="nofollow">https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore</a>
                             and copy the contents into the new .gitignore file (make sure you save it).
                         </div>
                         Now we need to put the files we do want into source control.
@@ -270,14 +288,15 @@ git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</code></p
                         worry,
                         this happens. This is a phenomenon sometimes known as yak shaving.  (you can Google this, or see
                         another example) <a href="https://xkcd.com/349/" class="external-link"
-                                            rel="nofollow">https://xkcd.com/349/</a>
+                            rel="nofollow">https://xkcd.com/349/</a>
                     </div>
                     <div class="tab-pane fade show" id="step2" role="tabpanel" aria-labelledby="step2-tab">
                         <h1><strong>Step 2</strong></h1>
                         We now have a working chatbot, but it's not doing much yet. Let's make it do something a bit
                         more
                         interesting.
-                        Our BA's have given us this specification:<span class="confluence-embedded-file-wrapper image-center-wrapper">
+                        Our BA's have given us this specification:<span
+                            class="confluence-embedded-file-wrapper image-center-wrapper">
                             <img src="attachments/1009975304/1010073614.png">
                         </span>
                         <br>
@@ -292,7 +311,7 @@ git commit -m &quot;Scaffolded basic bot, hello world is working&quot;</code></p
                             <em>
                                 &quot;Hi! You are talking to the Hate Crime Report Bot. Give me the details of what
                                 happened, and I will let the <span class="inline-comment-marker"
-                                                                   data-ref="2c182147-88aa-43d9-96ca-d68cdd2b826c">club know</span> so they can
+                                    data-ref="2c182147-88aa-43d9-96ca-d68cdd2b826c">club know</span> so they can
                                 take action.&quot;
                             </em>
                         </div>
